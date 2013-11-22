@@ -1,0 +1,35 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/*
+ *  ======== ires_algorithm.tcf ========
+ */
+
+utils.importFile("../common.tci");
+
+
+// check any and all asserts added in the script above
+//assert.check();
+
+// Add instance TSK.TSK_myIdle
+TSK_smain = prog.module("TSK").create("TSK_myIdle");
+TSK_smain.stackSize = 0x1000;
+TSK_smain.fxn = prog.extern("myIdle");
+TSK_smain.priority = 1;                   // Must run at max priority
+
+// Disable the BIOS clock
+bios.PRD.USECLK = false;
+bios.CLK.ENABLECLK = false;
+
+/* generate the configuration files */
+prog.gen();
+/*
+ *  @(#) ti.sdo.fc.rman.examples.nonRtscExample; 1, 0, 0,22; 9-9-2008 23:55:03; /db/atree/library/trees/fc-e20x/src/
+ */
+

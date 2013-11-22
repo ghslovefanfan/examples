@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.examples.apps.server_api_example.audio_server" version="">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="main.c"/>
+        <srcFile name="package/cfg/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/audio_copy_x64P.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="audio_copy.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/audio_copy_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/audio_copy_x64Pcfg_c.o64P.dep" src="package/cfg/audio_copy_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/audio_copy/main.o64P.dep" src="main.c"/>
+        <srcFile name="package/cfg/audio_copy_x64Pcfg.o64P.dep" src="package/cfg/audio_copy_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/audio_copy_x64P.o64P.dep" src="package/cfg/audio_copy_x64P.c"/>
+        <srcFile name="package/cfg/audio_copy_x64P.dep" src="package/cfg/audio_copy_x64P.cfg"/>
+        <srcFile name="package/rel/ti_sdo_ce_examples_apps_server_api_example_audio_server.tar.dep" src="package/rel/ti_sdo_ce_examples_apps_server_api_example_audio_server.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evmDM6446"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="audio_copy"
+        pname="audio_copy.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/audio_copy_x64P.cfg"
+        xCfgPrefix="package/cfg/audio_copy_x64P"
+        cfgScript="audio_copy.tcf"
+        />
+    </executables>
+    <tests>
+    <test exeName="audio_copy.x64P"
+        args=""
+        groupName="audio_copy.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_examples_apps_server_api_example_audio_server"
+        pname="ti_sdo_ce_examples_apps_server_api_example_audio_server.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.xdc.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="audio_copy.x64P"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="" label="" date="" buildCount="">
+<package name="ti.sdo.ce.examples.extensions.scale"
+    version=""/>
+<imports>
+</imports>
+<references>
+    <targetRoot base="/db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-root-new/montavista/pro/devkit/arm/v5t_le/"
+        trgs="gnu.targets.MVArm9">
+        <file name="lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stdarg.h"/>
+        <file name="lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stddef.h"/>
+        <file name="target/usr/include/_G_config.h"/>
+        <file name="target/usr/include/bits/stdio.h"/>
+        <file name="target/usr/include/bits/stdio_lim.h"/>
+        <file name="target/usr/include/bits/sys_errlist.h"/>
+        <file name="target/usr/include/bits/types.h"/>
+        <file name="target/usr/include/bits/typesizes.h"/>
+        <file name="target/usr/include/bits/wchar.h"/>
+        <file name="target/usr/include/bits/wordsize.h"/>
+        <file name="target/usr/include/features.h"/>
+        <file name="target/usr/include/gconv.h"/>
+        <file name="target/usr/include/gnu/stubs.h"/>
+        <file name="target/usr/include/libio.h"/>
+        <file name="target/usr/include/stdio.h"/>
+        <file name="target/usr/include/sys/cdefs.h"/>
+        <file name="target/usr/include/wchar.h"/>
+    </targetRoot>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.cmd.sch"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 0, 0">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="package/xdc.sch"/>
+        <file name="recap.xs"/>
+        <file name="std.h"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+    </package>
+    <package name="gnu.targets"
+        version="1, 0, 0, 2">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.h"/>
+        <file name="MVArm9.h"/>
+        <file name="UCArm9.h"/>
+        <file name="package.xs"/>
+        <file name="package/gnu.targets.sch"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.ce.examples.codecs.scale"
+        version="">
+        <file name="iscale.h"/>
+    </package>
+    <package name="ti.sdo.ce.trace"
+        version="1, 0, 0">
+        <file name="gt.h"/>
+    </package>
+    <package name="ti.sdo.utils.trace"
+        version="1, 0, 0">
+        <file name="gt.h"/>
+    </package>
+    <package name="xdc.corevers"
+        version="16, 0, 0, 1">
+        <file name="package/xdc.corevers.sch"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 0">
+        <file name="java/antlr.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/junit.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+        <file name="package/xdc.shelf.sch"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu/"
+        trgs="gnu.targets.Linux86">
+        <file name="i686-unknown-linux-gnu/sys-include/_G_config.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/stdio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/stdio_lim.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/sys_errlist.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/types.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/typesizes.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/wchar.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/wordsize.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/features.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/gconv.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/gnu/stubs.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/libio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/stdio.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/sys/cdefs.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/wchar.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stdarg.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stddef.h"/>
+    </targetRoot>
+    <package name="ti.sdo.ce.node"
+        version="1, 0, 0">
+        <file name="node.h"/>
+    </package>
+    <package name="ti.targets"
+        version="1, 0, 0, 1">
+        <file name="ITarget.xs"/>
+        <file name="package.xs"/>
+        <file name="package/ti.targets.sch"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.ce.osal"
+        version="2, 0, 2">
+        <file name="Log.h"/>
+        <file name="Memory.h"/>
+    </package>
+    <package name="ti.sdo.ce.ipc"
+        version="2, 0, 1">
+        <file name="Comm.h"/>
+        <file name="IIpc.xs"/>
+        <file name="package.xs"/>
+        <file name="package/ti.sdo.ce.ipc.sch"/>
+    </package>
+    <package name="ti.xdais"
+        version="1, 2.0, 1">
+        <file name="ialg.h"/>
+        <file name="xdas.h"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.gen.sch"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 0, 0">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+        <file name="package/xdc.bld.sch"/>
+    </package>
+    <package name="xdc.cfg"
+        version="1, 0, 1, 0">
+        <file name="Program.xdc"/>
+    </package>
+    <package name="ti.sdo.ce.utils"
+        version="1, 0, 0">
+        <file name="libvers.xdt"/>
+    </package>
+    <package name="ti.sdo.ce"
+        version="1, 0, 6">
+        <file name="CERuntime.xs"/>
+        <file name="Engine.h"/>
+        <file name="Engine.xs"/>
+        <file name="ICodec.xdc"/>
+        <file name="ICodec.xs"/>
+        <file name="Server.h"/>
+        <file name="Server.xs"/>
+        <file name="package.xs"/>
+        <file name="package/ti.sdo.ce.sch"/>
+        <file name="skel.h"/>
+        <file name="visa.h"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.xsr.sch"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0">
+        <file name="Clock.xs"/>
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.global.sch"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux/"
+        trgs="ti.targets.C64P">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/stdio.h"/>
+    </targetRoot>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.spec.sch"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/buildroot/10122007/build_arm/staging_dir/usr/"
+        trgs="gnu.targets.UCArm9">
+        <file name="include/bits/initspin.h"/>
+        <file name="include/bits/kernel_types.h"/>
+        <file name="include/bits/pthreadtypes.h"/>
+        <file name="include/bits/sched.h"/>
+        <file name="include/bits/sigset.h"/>
+        <file name="include/bits/sigthread.h"/>
+        <file name="include/bits/stdio_lim.h"/>
+        <file name="include/bits/time.h"/>
+        <file name="include/bits/types.h"/>
+        <file name="include/bits/typesizes.h"/>
+        <file name="include/bits/uClibc_arch_features.h"/>
+        <file name="include/bits/uClibc_clk_tck.h"/>
+        <file name="include/bits/uClibc_config.h"/>
+        <file name="include/bits/uClibc_mutex.h"/>
+        <file name="include/bits/uClibc_pthread.h"/>
+        <file name="include/bits/uClibc_stdio.h"/>
+        <file name="include/bits/wordsize.h"/>
+        <file name="include/features.h"/>
+        <file name="include/pthread.h"/>
+        <file name="include/sched.h"/>
+        <file name="include/signal.h"/>
+        <file name="include/stdio.h"/>
+        <file name="include/sys/cdefs.h"/>
+        <file name="include/time.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stdarg.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stddef.h"/>
+    </targetRoot>
+    <package name="xdc.platform"
+        version="1, 0, 1, 0">
+        <file name="ICpuDataSheet.xdc"/>
+        <file name="IExeContext.xdc"/>
+        <file name="IPlatform.xdc"/>
+    </package>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/atree/library/trees/ce-h27x/src/user.bld"/>
+    <file name="/db/atree/library/trees/ce-h27x/src/config.bld"/>
+</orphans>
+</release>

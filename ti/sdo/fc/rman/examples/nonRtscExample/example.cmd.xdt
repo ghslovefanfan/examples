@@ -1,0 +1,84 @@
+%%{
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+
+%%}
+%%{
+    var rtsLib = this.build.target.rootDir + "/lib";
+    var chipType = prog.build.cfgArgs.chipType;
+    var debugFlag = prog.build.cfgArgs.debugFlag; 
+    var rman = xdc.loadPackage("ti.sdo.fc.rman");
+    var dskt2 = xdc.loadPackage("ti.sdo.fc.dskt2");
+    var nullres = xdc.loadPackage("ti.sdo.fc.ires.nullresource");
+    var hdvicp = xdc.loadPackage("ti.sdo.fc.ires.hdvicp");
+    var example = xdc.loadPackage("ti.sdo.fc.rman.examples.nonRtscExample");
+    var dskt2Lib = "dskt2"; 
+    var gt = xdc.loadPackage("ti.sdo.utils.trace");
+    var gtinfra = xdc.loadPackage("ti.sdo.fc.utils.gtinfra");
+    var bios = xdc.loadPackage("ti.bios");
+    var libExt = "";
+    if (debugFlag = true) {
+        libExt += "dt";
+        dskt2Lib += "dt";   
+    }
+ 
+    libExt += ".a64P";
+    var Ext = "d.a64P";
+    dskt2Lib += ".a64P";
+
+%%}
+
+-x
+
+-i"`new java.io.File(dskt2.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(hdvicp.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(rman.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(nullres.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(bios.packageBase).getCanonicalPath()`/lib"
+-i"`new java.io.File(gt.packageBase).getCanonicalPath()`/lib"
+-i"`new java.io.File(gtinfra.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(example.packageBase).getCanonicalPath()`/package/cfg"
+-i"."
+
+/* RTS library search path */
+-i"`rtsLib`"
+-l nonRtscExample_hdvicp_dm6446_x64Pcfg.cmd
+-l"rman`libExt`"
+-l"hdvicp`libExt`"
+-l"bios.a64P"
+-l"gt_noOs`libExt`"
+-l"gt`Ext`"
+-l"`dskt2Lib`"
+-l"nullres`libExt`"
+
+-l../../../../../../ti/sdo/fc/utils/api/api.a64P
+
+/*
+ * DSKT2 configurations
+ */
+ 
+__DSKT_DARAM0 = _L1D_HEAP;
+__DSKT_DARAM1 = _L1D_HEAP;
+__DSKT_DARAM2 = _L1D_HEAP;
+__DSKT_SARAM0 = _L1D_HEAP;
+__DSKT_SARAM1 = _L1D_HEAP;
+__DSKT_SARAM2 = _L1D_HEAP;
+__DSKT_ESDATA = _EXTMEM_HEAP;
+__DSKT_IPROG  = _EXTMEM_HEAP;
+__DSKT_EPROG  = _EXTMEM_HEAP;
+__DSKT2_HEAP  = _L1D_HEAP;
+__DSKT2_ALLOW_EXTERNAL_SCRATCH = 0;
+__DSKT2_SARAM_SCRATCH_SIZES = _SCRATCH_ARRAY; 
+__DSKT2_DARAM_SCRATCH_SIZES = _SCRATCH_ARRAY; 
+%%{
+/*
+ * @(#) ti.sdo.fc.rman.examples.nonRtscExample; 1, 0, 0,22; 9-9-2008 23:55:03; /db/atree/library/trees/fc-e20x/src/
+ */
+
+%%}

@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.extensions.scale' release='' xmlns='xdc/services/spec'>
+    <imports name='ti.sdo.ce'/>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Abstract+Scale+Algorithm+Interfaces'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+package+contains+an+example+scaling+interfaces.'/>
+        <comment line='-1' text='++In+addition%2C+it+provides+APIs+that'/>
+        <comment line='-1' text='++clients+can+call+to+create+and+run+these+algorithms.'/>
+    </autodoc>
+    <interface name='ISCALE' extends='ti.sdo.ce.ICodec' hostonly='1'>
+        <autodoc tag='summary'>
+            <comment line='-1' text='++Scale+Codec+Configuration+interface'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++All+Scale+Codec+modules+must+implement+this+configuration+interface.'/>
+        </autodoc>
+        <config name='serverFxns' line='-1' hostonly='1' override='1' readonly='1' type='K%21String%21%24' code='s' init='%22SCALE_SKEL%22'>
+        </config>
+        <config name='stubFxns' line='-1' hostonly='1' override='1' readonly='1' type='K%21String%21%24' code='s' init='%22SCALE_STUBS%22'>
+        </config>
+        <config name='rpcProtocolVersion' line='-1' hostonly='1' override='1' readonly='1' type='K%21Int%21%24' code='n' init='1'>
+        </config>
+    </interface>
+</package>

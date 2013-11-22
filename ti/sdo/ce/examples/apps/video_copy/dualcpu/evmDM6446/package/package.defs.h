@@ -1,0 +1,4 @@
+#ifndef ti_sdo_ce_examples_apps_video_copy_dualcpu_evmDM6446__
+#define ti_sdo_ce_examples_apps_video_copy_dualcpu_evmDM6446__
+
+#endif /* ti_sdo_ce_examples_apps_video_copy_dualcpu_evmDM6446__ */ 

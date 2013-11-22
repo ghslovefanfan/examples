@@ -1,0 +1,30 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/*
+ *  ======== ires_algorithm.tcf ========
+ */
+
+utils.importFile("../common.tci");
+
+
+// check any and all asserts added in the script above
+//assert.check();
+
+// Disable the BIOS clock
+bios.PRD.USECLK = false;
+bios.CLK.ENABLECLK = false;
+TSK_smain.stackSize = 0x4000;
+
+/* generate the configuration files */
+prog.gen();
+/*
+ *  @(#) ti.sdo.fc.rman.examples.scratchEdma3; 1, 0, 0,38; 9-9-2008 23:55:23; /db/atree/library/trees/fc-e20x/src/
+ */
+

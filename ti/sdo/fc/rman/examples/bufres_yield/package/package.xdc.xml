@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.fc.rman.examples.bufres_yield' release='1, 0, 0' xmlns='xdc/services/spec'>
+    <imports name='ti.bios' version=''/>
+    <imports name='ti.sdo.fc.utils' version=''/>
+    <imports name='ti.sdo.fc.dskt2' version=''/>
+    <imports name='ti.sdo.fc.utils.api' version=''/>
+    <imports name='ti.sdo.fc.rman' version=''/>
+</package>

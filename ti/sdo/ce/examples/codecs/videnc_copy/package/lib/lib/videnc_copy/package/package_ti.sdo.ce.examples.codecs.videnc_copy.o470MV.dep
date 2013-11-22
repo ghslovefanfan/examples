@@ -1,0 +1,8 @@
+  package/lib/lib/videnc_copy/package/package_ti.sdo.ce.examples.codecs.videnc_copy.o470MV:   package/package_ti.sdo.ce.examples.codecs.videnc_copy.c   /opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/xdc/std.h   /opt/mv_pro_4.0.1/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stdarg.h   /opt/mv_pro_4.0.1/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stddef.h   /opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/gnu/targets/std.h   /opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/gnu/targets/MVArm9.h   package/package.bld.c
+package/package_ti.sdo.ce.examples.codecs.videnc_copy.c:
+/opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/xdc/std.h:
+/opt/mv_pro_4.0.1/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stdarg.h:
+/opt/mv_pro_4.0.1/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stddef.h:
+/opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/gnu/targets/std.h:
+/opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/gnu/targets/MVArm9.h:
+package/package.bld.c:

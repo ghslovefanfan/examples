@@ -1,0 +1,19 @@
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: ./video_copy.x64P
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: ./video_copy.x64P.DataSheet.html
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/.vers_b101
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/.vers_g102
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/.vers_r103
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/build.cfg
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/info/video_copy.x64P.DataSheet.html
+package/info/video_copy.x64P.DataSheet.html:
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/info/video_copy.x64P.info.js
+package/info/video_copy.x64P.info.js:
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/package.bld.xml
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/package.defs.h
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/package.ext.xml
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/package.rel.dot
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/package.xdc.xml
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/package_ti.sdo.ce.examples.servers.video_copy.evmDM6467.c
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/ti.sdo.ce.examples.servers.video_copy.evmDM6467.ccs
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package/ti.sdo.ce.examples.servers.video_copy.evmDM6467.sch
+ti_sdo_ce_examples_servers_video_copy_evmDM6467.tar: package.xdc

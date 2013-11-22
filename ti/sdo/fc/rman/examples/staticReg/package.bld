@@ -1,0 +1,162 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/*
+ *  ======== package.bld ========
+ *  Build script for RMAN IRES Edma3 Linked transfer protocol example.
+ *
+ */
+
+Pkg.attrs.exportAll = true;
+
+var buildPlatforms = {
+    //C64P:             ["2430", "dm6446","dm648"],
+    C64P:               ["dm6446", "dm6467"],
+};
+
+/*
+ * Executables for all platforms (2430, dm6446)
+ * To add a new program, just create a new element in the progs array and
+ * set it equal to an array listing the objects the program requires.
+ *
+ * The output will have the name "<element>_tiomapxxxx.<ext>" or
+ * "<element>_dm6446.<ext>" , and there
+ * must be a tconf script describing the programs configuration with the
+ * name <element>.tcf.
+ */
+var commonProgs = [
+    {
+        name:   "staticReg_edma3",
+        sources: ["ires_algorithm",
+                  "app",
+                  "mySem", 
+                 ],
+        tcf:    "ires_algorithm",
+    },
+];
+
+/* Specifies which programs run on which platforms */
+var platProgs = {
+    "2430"     : commonProgs,
+    "dm6446"   : commonProgs,
+    "dm648"    : commonProgs,
+    "dm6467"   : commonProgs,
+    "C6455"   : commonProgs,
+};
+
+var realPlatformName = {
+    "2430"      : "ti.platforms.sdp2430" , 
+    "dm6446"   : "ti.platforms.evmDM6446",
+    "dm648"   : "ti.platforms.evmDM648",
+    "C6455"   : "ti.platforms.dsk6455",
+    "dm6467"   : "ti.platforms.evmDM6467",
+};
+
+var testLibs = [
+];
+
+var AOPTS = "";
+AOPTS += " -ad\"_INSTR_BANDWIDTH=0\"";
+
+// Debug build
+var COPTS = "-g -pdr -pden -pds=452 -pds=238";
+
+// Comment out -o3 for debugging
+COPTS += " -D\"_INSTR_BANDWIDTH=0\"";
+COPTS += " -DDM644X_SOC_BUILD ";
+
+var DEFS = "-DDBC_ASSERTS=1 "
+
+Pkg.uses = [
+    "ti/bios/include",
+];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    var plat = targ.platform;   /* use the target's default platform */
+
+    if (buildPlatforms[targ.name] == null) {
+        continue;
+    }
+    //print("building for target " + targ.name + " ****");
+
+    var profName = "bridge_gt_debug";
+    var profCOpts = targ.profiles[profName].compileOpts.copts;
+    var profDefs = targ.profiles[profName].compileOpts.defs;
+
+    // Build libraries
+    for (var j = 0; j < testLibs.length; j++) {
+        //print("Adding library " + testLibs[j].name + "****");
+        var lib = Pkg.addLibrary(testLibs[j].name,
+                targ, {
+                                 copts: COPTS +  profCOpts,
+                                 aopts: "",
+                                 defs: profDefs,
+                                 profile: profName
+                });
+        lib.addObjects(testLibs[j].sources);
+    }
+
+    // for each build platform (eg, 2430,...)
+    for (k = 0; k < buildPlatforms[targ.name].length; k++) {
+        var chipType = buildPlatforms[targ.name][k]; // eg, "2430"
+        var progs = platProgs[chipType];  // eg, programs2430
+        
+        /* Process platform's executables */
+        for (j = 0; j < progs.length; j++) {
+            var prog = progs[j];
+            //print("adding " + prog.name + " (" + chipType + ") flavor ****");
+
+            // add executable 
+            if (prog.tcf != null) {
+                //print("program tcf: " + prog.tcf + "****"); 
+                var exe = Pkg.addExecutable(
+
+                prog.name + "_" + chipType, targ, realPlatformName[chipType], {
+                        aopts: AOPTS,
+                        copts: " ",
+                        defs: DEFS,
+                        lopts: "-c ",
+                        profile: profName,
+                        cfgScript: prog.tcf  + ".tcf",
+                        cfgArgs: "{chipType: \"" + chipType + "\"}",
+                    });
+            }
+            else {
+                /*
+                 *  This is not a BIOS program, so there is no tcf file.
+                 *  Instead use .xdt file that will have the linker include
+                 *  paths to search for dman3, acpy3, and rts libraries.
+                 *  Also set compile flag to compile out BIOS functions.
+                 */
+                //print("program xdt: " + prog.xdt + "****"); 
+                var exe = Pkg.addExecutable(
+                prog.name + "_" + chipType, targ, realPlatformName[chipType], {
+
+                        aopts: AOPTS,
+                        copts: " ",
+                        defs: DEFS + " -D_RTS_MODE",
+                        lopts: "-c ",
+                        profile: "bridge_debug",
+                        linkTemplate: prog.xdt + ".xdt",
+                        cfgScript: null,
+                 });
+            }
+
+            // Add -pdr for remarks and -pdn to gen numeric remark IDs.
+            // (Note, we don't add it to the .addExecutable call above b/c
+            // the RTSC generated sources are noisy with -pdr.
+            exe.addObjects( prog.sources, { copts: COPTS} );
+        }
+    }
+}
+/*
+ *  @(#) ti.sdo.fc.rman.examples.staticReg; 1, 0, 0,22; 9-9-2008 23:55:29; /db/atree/library/trees/fc-e20x/src/
+ */
+

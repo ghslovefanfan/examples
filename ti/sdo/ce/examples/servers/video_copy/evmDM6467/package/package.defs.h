@@ -1,0 +1,4 @@
+#ifndef ti_sdo_ce_examples_servers_video_copy_evmDM6467__
+#define ti_sdo_ce_examples_servers_video_copy_evmDM6467__
+
+#endif /* ti_sdo_ce_examples_servers_video_copy_evmDM6467__ */ 

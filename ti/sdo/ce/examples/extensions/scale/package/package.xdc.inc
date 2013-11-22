@@ -1,0 +1,11 @@
+package.xdc
+package.xs
+ISCALE.xdc
+package/ti.sdo.ce.examples.extensions.scale.ccs
+package/.vers_g102
+package/.vers_r103
+package/.vers_b101
+package/ti.sdo.ce.examples.extensions.scale.sch
+package/package_ti.sdo.ce.examples.extensions.scale.c
+package/package.defs.h
+package/package.xdc.xml

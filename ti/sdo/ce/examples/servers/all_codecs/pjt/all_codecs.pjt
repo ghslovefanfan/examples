@@ -1,0 +1,72 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="$(Proj_dir)"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\all.cfg"
+Source="..\all.tcf"
+Source="..\main.c"
+Source="..\xdcpaths.dat"
+Source="..\link.cmd"
+
+[Generated Files]
+Source="..\allcfg.s62"
+Source="..\allcfg_c.c"
+Source="..\xdcconfig\cfg.c"
+Source="..\xdcconfig\linker.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -@"=$(Proj_dir)/../xdcconfig/compiler.opt" -fr"$(Proj_dir)\Debug" -d"_DEBUG" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-@"=$(Proj_dir)/../xdcconfig/compiler.opt" -o3 -fr"$(Proj_dir)\Release" -mv6400+
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-cfg -t=ti.targets.C64P -xdcroot=%XDC_INSTALL_DIR%
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-cfg -t=ti.targets.C64P -xdcroot=%XDC_INSTALL_DIR%
+
+["Linker" Settings: "Debug"]
+Options=-c -m"..\evmDM6446\all.x64P.map" -o"..\evmDM6446\all.x64P" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m"..\evmDM6446\all.x64P.map" -o"..\evmDM6446\all.x64P" -w -x
+
+["XDC" Settings: "Debug"]
+Options=--xdcpathsfile="xdcpaths.dat" -tti.targets.C64P -pti.platforms.evmDM6437 --tcf
+
+["XDC" Settings: "Release"]
+Options=--xdcpathsfile="xdcpaths.dat" -tti.targets.C64P -pti.platforms.evmDM6437 --tcf
+
+["..\all.tcf" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["..\xdcpaths.dat" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["..\xdcpaths.dat" Settings: "Release"]
+ExcludeFromBuild=true
+
+["..\xdcconfig\linker.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["..\xdcconfig\linker.cmd" Settings: "Release"]
+LinkOrder=1
+
+["..\link.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["..\link.cmd" Settings: "Release"]
+LinkOrder=1
+

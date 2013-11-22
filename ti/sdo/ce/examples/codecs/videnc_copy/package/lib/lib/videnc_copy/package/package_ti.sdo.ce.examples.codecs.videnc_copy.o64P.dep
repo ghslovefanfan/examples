@@ -1,0 +1,8 @@
+package/lib/lib/videnc_copy/package/package_ti.sdo.ce.examples.codecs.videnc_copy.o64P: package/package_ti.sdo.ce.examples.codecs.videnc_copy.c /opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/xdc/std.h package/package.bld.c /opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stdarg.h /opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stddef.h /opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/ti/targets/std.h /opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stdint.h 
+package/package_ti.sdo.ce.examples.codecs.videnc_copy.c:
+/opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/xdc/std.h:
+package/package.bld.c:
+/opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stdarg.h:
+/opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stddef.h:
+/opt/dvsdk_1_40_02_33/xdc_3_00_06/packages/ti/targets/std.h:
+/opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stdint.h:

@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\vidtranscode_copy_ti.h",
+  ],
+  interfaceName: "IVIDTRANSCODECOPY",
+  baseDir: ".",
+  moduleName: "VIDTRANSCODECOPY",
+  architecture: "C64P",
+  library: "lib\\vidtranscode_copy.a64P",
+}

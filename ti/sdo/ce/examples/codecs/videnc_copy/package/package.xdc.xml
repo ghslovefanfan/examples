@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.codecs.videnc_copy' release='' xmlns='xdc/services/spec'>
+    <imports name='ti.sdo.ce.video'/>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Simple+Codec+Engine+compatible+video+%22encoder%22.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+codec+illustrates+the+simplest+integration+into+the+Codec'/>
+        <comment line='-1' text='++Engine.++Only+three+files+are+required+to+integrate+into+the+Codec+Engine%3A'/>
+    </autodoc>
+    <autodoc tag='details' mode='dlist'>
+        <comment line='-1' text='++++++-+%60package.xdc%60'/>
+        <comment line='-1' text='++++++++++This+file+is+required+to+declare+a+name+for+this+package+and+to'/>
+        <comment line='-1' text='++++++++++list+all+codec+interfaces+available.'/>
+        <comment line='-1' text='++++++-+%60VIDENC_COPY.xdc%60'/>
+        <comment line='-1' text='++++++++++This+file+specifies+a+codec+%28named+VIDENC_COPY%29+that+is'/>
+        <comment line='-1' text='++++++++++provided+by+this+package.'/>
+        <comment line='-1' text='++++++-+%60VIDENC_COPY.xs%60'/>
+        <comment line='-1' text='++++++++++This+file+implements+the+functions+required+by+the+ICodec'/>
+        <comment line='-1' text='++++++++++interface%3B+these+functions+enable+the+codec+to+describe+its'/>
+        <comment line='-1' text='++++++++++non-functional+requirements+such+as+stack+size.'/>
+        <comment line='-1' text=''/>
+        <comment line='-1' text='++All+other+files+in+this+package+are+simply+the+implementation+of+the+codec'/>
+        <comment line='-1' text='++as+specified+by+xDM.++Thus%2C+integration+into+the+Codec+Engine+requires'/>
+        <comment line='-1' text='++no+change+to+the+codecs+sources.'/>
+        <comment line='-1' text='+'/>
+    </autodoc>
+    <module name='VIDENC_COPY' extends='ti.sdo.ce.video.IVIDENC' hostonly='1'>
+        <autodoc tag='summary'>
+            <comment line='-1' text='++VIDENC_COPY+codec+specification'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++This+file+specifies+information+necessary+to+integrate+with+the+Codec'/>
+            <comment line='-1' text='++Engine.'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++By+inheriting+ti.sdo.ce.video.IVIDENC%2C+VIDENC_COPY+declares+that+it+%22is'/>
+            <comment line='-1' text='++a%22+video+encoder+algorithm.++This+allows+the+codec+engine+to+automatically'/>
+            <comment line='-1' text='++supply+simple+stubs+and+skeletons+for+transparent+execution+of+DSP'/>
+            <comment line='-1' text='++codecs+by+the+GPP.'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++In+addition+to+declaring+the+type+of+the+VIDENC_COPY+algorithm%2C+we+declare+the'/>
+            <comment line='-1' text='++external+symbol+required+by+xDAIS+that+identifies+the+algorithms'/>
+            <comment line='-1' text='++implementation+functions.'/>
+        </autodoc>
+        <config name='ialgFxns' line='-1' hostonly='1' override='1' readonly='1' type='K%21String%21%24' code='s' init='%22VIDENCCOPY_TI_VIDENCCOPY%22'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++name+of+this+algorithm%27s+xDAIS+alg+fxn+table'/>
+            </autodoc>
+        </config>
+        <config name='idma3Fxns' line='-1' hostonly='1' override='1' readonly='1' type='K%21String%21%24' code='s' init='%22VIDENCCOPY_TI_IDMA3%22'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++Name+of+xDAIS+alg+IDMA3+Interface+function+table.'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++Note+that+this+is+used+only+if+.useDMA+is+set+to+true.++If'/>
+                <comment line='-1' text='++.useDMA+is+false+%28the+default%29%2C+this+idma3Fxns+config+param+is'/>
+                <comment line='-1' text='++set+to+NULL+during+the+package%27s+close+phase.'/>
+            </autodoc>
+        </config>
+        <config name='useDMA' line='-1' hostonly='1' type='K%21Bool%21%24' code='b' init='%24Kfalse'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++This+config+flag+can+be+used+to+enable+the+DMA+performance+enhancments'/>
+                <comment line='-1' text='++available+for+%3Ci%3Esome%3C%2Fi%3E+targets+this+codec+supports+%28e.g.+C64P%29.'/>
+            </autodoc>
+            <autodoc tag='details'>
+                <comment line='-1' text='++If+you+set+this+to+true%2C+this+package+will+test+whether+DMA+is'/>
+                <comment line='-1' text='++available+for+the+requested+target.++If+it%27s+not+available%2C+a+warning'/>
+                <comment line='-1' text='++will+be+printed%2C+and+the+codec+will+fall+back+to+using+the+copy'/>
+                <comment line='-1' text='++based+version.'/>
+            </autodoc>
+        </config>
+    </module>
+</package>

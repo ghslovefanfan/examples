@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\imgdec1_copy_ti.h",
+  ],
+  interfaceName: "IIMGDEC1COPY",
+  baseDir: ".",
+  moduleName: "IMGDEC1COPY",
+  architecture: "C64P",
+  library: "lib\\imgdec1_copy.a64P",
+}

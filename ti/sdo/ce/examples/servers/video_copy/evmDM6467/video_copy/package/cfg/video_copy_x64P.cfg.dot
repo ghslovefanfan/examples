@@ -1,0 +1,320 @@
+digraph configuration {
+    size="7.5,10";
+    rankdir=LR;
+    ranksep=".50 equally";
+    concentrate=true;
+    compound=true;
+    label="\nConfiguration for video_copy/video_copy.x64P"
+  node [font=Helvetica, fontsize=14, fontcolor=black];  subgraph cluster0 {label=""; __cfg [label="/opt/dvsdk_1_40_02_33/codec_engine_2_10_02/examples/ti/sdo/ce/examples/servers/video_copy/evmDM6467/video_copy.tcf", color=white, fontcolor=blue];
+    node [font=Helvetica, fontsize=10];    subgraph cluster1 {
+        label="";
+        xdc__top [shape=box,label="xdc\n1,1,0,0,1203621209308", color=white];
+    }
+    subgraph cluster2 {
+        label="";
+        xdc_corevers__top [shape=box,label="xdc.corevers\n16,0,0,1,1203621227324", color=white];
+    }
+    subgraph cluster3 {
+        label="";
+        xdc_services_global__top [shape=box,label="xdc.services.global\n1,0,0,1203621258506", color=white];
+        xdc_services_global__bot [shape=point,label="", style=invis];
+        xdc_services_global_Clock [style=filled,fillcolor=lightgray, label="Clock"];
+        xdc_services_global__top -> xdc_services_global_Clock[style=invis];
+        xdc_services_global_Clock -> xdc_services_global__bot[style=invis];
+    }
+    subgraph cluster4 {
+        label="";
+        xdc_shelf__top [shape=box,label="xdc.shelf\n1,0,0,0,1203621283947", color=white];
+    }
+    subgraph cluster5 {
+        label="";
+        xdc_services_spec__top [shape=box,label="xdc.services.spec\n1,0,0,0,1203621302332", color=white];
+    }
+    subgraph cluster6 {
+        label="";
+        xdc_services_intern_xsr__top [shape=box,label="xdc.services.intern.xsr\n1,0,0,1203621275337", color=white];
+    }
+    subgraph cluster7 {
+        label="";
+        xdc_services_intern_gen__top [shape=box,label="xdc.services.intern.gen\n1,0,0,0,1203621273519", color=white];
+    }
+    subgraph cluster8 {
+        label="";
+        xdc_services_intern_cmd__top [shape=box,label="xdc.services.intern.cmd\n1,0,0,0,1203621271345", color=white];
+    }
+    subgraph cluster9 {
+        label="";
+        xdc_runtime__top [shape=box,label="xdc.runtime\n2,0,0,0,1203621258434", color=white];
+        xdc_runtime__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster10 {
+        label="";
+        ti_targets_rts6000__top [shape=box,label="ti.targets.rts6000\n1,0,0,0,1203621186754", color=white];
+    }
+    subgraph cluster11 {
+        label="";
+        xdc_bld__top [shape=box,label="xdc.bld\n1,0,0,0,1203621210222", color=white];
+        xdc_bld__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster12 {
+        label="";
+        ti_sdo_fc_dman3__top [shape=box,label="ti.sdo.fc.dman3\n1,0,3,1220943053023", color=white];
+        ti_sdo_fc_dman3__bot [shape=point,label="", style=invis];
+        ti_sdo_fc_dman3_DMAN3 [style=filled,fillcolor=lightgray, label="DMAN3"];
+        ti_sdo_fc_dman3__top -> ti_sdo_fc_dman3_DMAN3[style=invis];
+        ti_sdo_fc_dman3_DMAN3 -> ti_sdo_fc_dman3__bot[style=invis];
+    }
+    subgraph cluster13 {
+        label="";
+        ti_xdais_dm__top [shape=box,label="ti.xdais.dm\n1,0,4,1210262746529", color=white];
+    }
+    subgraph cluster14 {
+        label="";
+        ti_xdais__top [shape=box,label="ti.xdais\n1,2,1,1210262742149", color=white];
+    }
+    subgraph cluster15 {
+        label="";
+        ti_sdo_ce_node__top [shape=box,label="ti.sdo.ce.node\n1,0,0,1220951122176", color=white];
+        ti_sdo_ce_node__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_node_NODE [style=filled,fillcolor=lightgray, label="NODE"];
+        ti_sdo_ce_node__top -> ti_sdo_ce_node_NODE[style=invis];
+        ti_sdo_ce_node_NODE -> ti_sdo_ce_node__bot[style=invis];
+    }
+    subgraph cluster16 {
+        label="";
+        ti_sdo_ce_ipc_dsplink_dsp__top [shape=box,label="ti.sdo.ce.ipc.dsplink.dsp\n2,0,1,1220951102696", color=white];
+        ti_sdo_ce_ipc_dsplink_dsp__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_ipc_dsplink_dsp_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce_ipc_dsplink_dsp__top -> ti_sdo_ce_ipc_dsplink_dsp_Settings[style=invis];
+        ti_sdo_ce_ipc_dsplink_dsp_Settings -> ti_sdo_ce_ipc_dsplink_dsp__bot[style=invis];
+    }
+    subgraph cluster17 {
+        label="";
+        ti_sdo_utils_trace__top [shape=box,label="ti.sdo.utils.trace\n1,0,0,1220943366422", color=white];
+        ti_sdo_utils_trace__bot [shape=point,label="", style=invis];
+        ti_sdo_utils_trace_GT [style=filled,fillcolor=lightgray, label="GT"];
+        ti_sdo_utils_trace__top -> ti_sdo_utils_trace_GT[style=invis];
+        ti_sdo_utils_trace_GT -> ti_sdo_utils_trace__bot[style=invis];
+    }
+    subgraph cluster18 {
+        label="";
+        ti_sdo_ce_utils_xdm__top [shape=box,label="ti.sdo.ce.utils.xdm\n1,0,1,1220951322616", color=white];
+    }
+    subgraph cluster19 {
+        label="";
+        ti_sdo_fc_acpy3__top [shape=box,label="ti.sdo.fc.acpy3\n1,0,2,1220943014135", color=white];
+        ti_sdo_fc_acpy3__bot [shape=point,label="", style=invis];
+        ti_sdo_fc_acpy3_ACPY3 [style=filled,fillcolor=lightgray, label="ACPY3"];
+        ti_sdo_fc_acpy3__top -> ti_sdo_fc_acpy3_ACPY3[style=invis];
+        ti_sdo_fc_acpy3_ACPY3 -> ti_sdo_fc_acpy3__bot[style=invis];
+    }
+    subgraph cluster20 {
+        label="";
+        dsplink_dsp__top [shape=box,label="dsplink.dsp\n1,3,0", color=white];
+        dsplink_dsp__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster21 {
+        label="";
+        ti_rtdx__top [shape=box,label="ti.rtdx\n2,0,0,1,1194024051755", color=white];
+        ti_rtdx__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster22 {
+        label="";
+        ti_psl__top [shape=box,label="ti.psl\n5,0,0,0,0", color=white];
+    }
+    subgraph cluster23 {
+        label="";
+        ti_bios__top [shape=box,label="ti.bios\n5,2,4,9,1193960176642", color=white];
+        ti_bios__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster24 {
+        label="";
+        ti_sdo_fc_dskt2__top [shape=box,label="ti.sdo.fc.dskt2\n1,0,4,1220943095081", color=white];
+        ti_sdo_fc_dskt2__bot [shape=point,label="", style=invis];
+        ti_sdo_fc_dskt2_DSKT2 [style=filled,fillcolor=lightgray, label="DSKT2"];
+        ti_sdo_fc_dskt2__top -> ti_sdo_fc_dskt2_DSKT2[style=invis];
+        ti_sdo_fc_dskt2_DSKT2 -> ti_sdo_fc_dskt2__bot[style=invis];
+    }
+    subgraph cluster25 {
+        label="";
+        ti_bios_utils__top [shape=box,label="ti.bios.utils\n2,0,1,0,1191891830609", color=white];
+        ti_bios_utils__bot [shape=point,label="", style=invis];
+        ti_bios_utils_Load [style=filled,fillcolor=lightgray, label="Load"];
+        ti_bios_utils__top -> ti_bios_utils_Load[style=invis];
+        ti_bios_utils_Load -> ti_bios_utils__bot[style=invis];
+    }
+    subgraph cluster26 {
+        label="";
+        ti_catalog_c6000__top [shape=box,label="ti.catalog.c6000\n1,0,0,0,1203561781695", color=white];
+        ti_catalog_c6000__bot [shape=point,label="", style=invis];
+        ti_catalog_c6000_TMS320CDM6467 [style=filled,fillcolor=lightgray, label="TMS320CDM6467"];
+        ti_catalog_c6000__top -> ti_catalog_c6000_TMS320CDM6467[style=invis];
+        ti_catalog_c6000_TMS320CDM6467 -> ti_catalog_c6000__bot[style=invis];
+    }
+    subgraph cluster27 {
+        label="";
+        xdc_platform__top [shape=box,label="xdc.platform\n1,0,1,0,1203621237157", color=white];
+        xdc_platform__bot [shape=point,label="", style=invis];
+        xdc_platform_ExeContext [style=filled,fillcolor=lightgray, label="ExeContext"];
+        xdc_platform__top -> xdc_platform_ExeContext[style=invis];
+        xdc_platform_ExeContext -> xdc_platform__bot[style=invis];
+        xdc_platform_Utils [style=filled,fillcolor=lightgray, label="Utils"];
+        xdc_platform__top -> xdc_platform_Utils[style=invis];
+        xdc_platform_Utils -> xdc_platform__bot[style=invis];
+    }
+    subgraph cluster28 {
+        label="";
+        xdc_cfg__top [shape=box,label="xdc.cfg\n1,0,1,0,1203621225891", color=white];
+        xdc_cfg__bot [shape=point,label="", style=invis];
+        xdc_cfg_Program [style=filled,fillcolor=lightgray, label="Program"];
+        xdc_cfg__top -> xdc_cfg_Program[style=invis];
+        xdc_cfg_Program -> xdc_cfg__bot[style=invis];
+        xdc_cfg_Main [style=filled,fillcolor=lightgray, label="Main"];
+        xdc_cfg__top -> xdc_cfg_Main[style=invis];
+        xdc_cfg_Main -> xdc_cfg__bot[style=invis];
+    }
+    subgraph cluster29 {
+        label="";
+        ti_platforms_evmDM6467__top [shape=box,label="ti.platforms.evmDM6467\n1,0,0,0,1192229633217", color=white];
+        ti_platforms_evmDM6467__bot [shape=point,label="", style=invis];
+        ti_platforms_evmDM6467_Platform [style=filled,fillcolor=lightgray, label="Platform"];
+        ti_platforms_evmDM6467__top -> ti_platforms_evmDM6467_Platform[style=invis];
+        ti_platforms_evmDM6467_Platform -> ti_platforms_evmDM6467__bot[style=invis];
+    }
+    subgraph cluster30 {
+        label="";
+        ti_sdo_ce_osal__top [shape=box,label="ti.sdo.ce.osal\n2,0,2,1220951127739", color=white];
+        ti_sdo_ce_osal__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_osal_Global [style=filled,fillcolor=lightgray, label="Global"];
+        ti_sdo_ce_osal__top -> ti_sdo_ce_osal_Global[style=invis];
+        ti_sdo_ce_osal_Global -> ti_sdo_ce_osal__bot[style=invis];
+    }
+    subgraph cluster31 {
+        label="";
+        ti_sdo_ce_ipc__top [shape=box,label="ti.sdo.ce.ipc\n2,0,1,1220951085787", color=white];
+        ti_sdo_ce_ipc__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_ipc_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce_ipc__top -> ti_sdo_ce_ipc_Settings[style=invis];
+        ti_sdo_ce_ipc_Settings -> ti_sdo_ce_ipc__bot[style=invis];
+    }
+    subgraph cluster32 {
+        label="";
+        ti_sdo_ce_alg__top [shape=box,label="ti.sdo.ce.alg\n1,0,1,1220950781938", color=white];
+        ti_sdo_ce_alg__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_alg_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce_alg__top -> ti_sdo_ce_alg_Settings[style=invis];
+        ti_sdo_ce_alg_Settings -> ti_sdo_ce_alg__bot[style=invis];
+    }
+    subgraph cluster33 {
+        label="";
+        ti_sdo_ce_osal_bios__top [shape=box,label="ti.sdo.ce.osal.bios\n2,0,1,1220951133740", color=white];
+        ti_sdo_ce_osal_bios__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_osal_bios_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce_osal_bios__top -> ti_sdo_ce_osal_bios_Settings[style=invis];
+        ti_sdo_ce_osal_bios_Settings -> ti_sdo_ce_osal_bios__bot[style=invis];
+    }
+    subgraph cluster34 {
+        label="";
+        ti_sdo_ce_ipc_bios__top [shape=box,label="ti.sdo.ce.ipc.bios\n2,0,1,1220951091097", color=white];
+        ti_sdo_ce_ipc_bios__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_ipc_bios_Ipc [style=filled,fillcolor=lightgray, label="Ipc"];
+        ti_sdo_ce_ipc_bios__top -> ti_sdo_ce_ipc_bios_Ipc[style=invis];
+        ti_sdo_ce_ipc_bios_Ipc -> ti_sdo_ce_ipc_bios__bot[style=invis];
+    }
+    subgraph cluster35 {
+        label="";
+        ti_sdo_ce__top [shape=box,label="ti.sdo.ce\n1,0,6,1220950771473", color=white];
+        ti_sdo_ce__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_Engine [style=filled,fillcolor=lightgray, label="Engine"];
+        ti_sdo_ce__top -> ti_sdo_ce_Engine[style=invis];
+        ti_sdo_ce_Engine -> ti_sdo_ce__bot[style=invis];
+        ti_sdo_ce_Server [style=filled,fillcolor=lightgray, label="Server"];
+        ti_sdo_ce__top -> ti_sdo_ce_Server[style=invis];
+        ti_sdo_ce_Server -> ti_sdo_ce__bot[style=invis];
+        ti_sdo_ce_CERuntime [style=filled,fillcolor=lightgray, label="CERuntime"];
+        ti_sdo_ce__top -> ti_sdo_ce_CERuntime[style=invis];
+        ti_sdo_ce_CERuntime -> ti_sdo_ce__bot[style=invis];
+        ti_sdo_ce_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce__top -> ti_sdo_ce_Settings[style=invis];
+        ti_sdo_ce_Settings -> ti_sdo_ce__bot[style=invis];
+    }
+    subgraph cluster36 {
+        label="";
+        ti_sdo_ce_bioslog__top [shape=box,label="ti.sdo.ce.bioslog\n1,0,1,1220950800329", color=white];
+        ti_sdo_ce_bioslog__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_bioslog_LogServer [style=filled,fillcolor=lightgray, label="LogServer"];
+        ti_sdo_ce_bioslog__top -> ti_sdo_ce_bioslog_LogServer[style=invis];
+        ti_sdo_ce_bioslog_LogServer -> ti_sdo_ce_bioslog__bot[style=invis];
+    }
+    subgraph cluster37 {
+        label="";
+        ti_sdo_ce_video__top [shape=box,label="ti.sdo.ce.video\n1,0,3,1220951334122", color=white];
+        ti_sdo_ce_video__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_video_VIDENCConfig [style=filled,fillcolor=lightgray, label="VIDENCConfig"];
+        ti_sdo_ce_video__top -> ti_sdo_ce_video_VIDENCConfig[style=invis];
+        ti_sdo_ce_video_VIDENCConfig -> ti_sdo_ce_video__bot[style=invis];
+        ti_sdo_ce_video_VIDDECConfig [style=filled,fillcolor=lightgray, label="VIDDECConfig"];
+        ti_sdo_ce_video__top -> ti_sdo_ce_video_VIDDECConfig[style=invis];
+        ti_sdo_ce_video_VIDDECConfig -> ti_sdo_ce_video__bot[style=invis];
+    }
+    subgraph cluster38 {
+        label="";
+        ti_sdo_ce_examples_codecs_viddec_copy__top [shape=box,label="ti.sdo.ce.examples.codecs.viddec_copy\n", color=white];
+        ti_sdo_ce_examples_codecs_viddec_copy__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_examples_codecs_viddec_copy_VIDDEC_COPY [style=filled,fillcolor=lightgray, label="VIDDEC_COPY"];
+        ti_sdo_ce_examples_codecs_viddec_copy__top -> ti_sdo_ce_examples_codecs_viddec_copy_VIDDEC_COPY[style=invis];
+        ti_sdo_ce_examples_codecs_viddec_copy_VIDDEC_COPY -> ti_sdo_ce_examples_codecs_viddec_copy__bot[style=invis];
+    }
+    subgraph cluster39 {
+        label="";
+        ti_sdo_ce_examples_codecs_videnc_copy__top [shape=box,label="ti.sdo.ce.examples.codecs.videnc_copy\n", color=white];
+        ti_sdo_ce_examples_codecs_videnc_copy__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_examples_codecs_videnc_copy_VIDENC_COPY [style=filled,fillcolor=lightgray, label="VIDENC_COPY"];
+        ti_sdo_ce_examples_codecs_videnc_copy__top -> ti_sdo_ce_examples_codecs_videnc_copy_VIDENC_COPY[style=invis];
+        ti_sdo_ce_examples_codecs_videnc_copy_VIDENC_COPY -> ti_sdo_ce_examples_codecs_videnc_copy__bot[style=invis];
+    }
+    subgraph cluster40 {
+        label="";
+        video_copy__top [shape=box,label="video_copy\n", color=white];
+    }
+  }
+  node [font=Helvetica, fontsize=10];
+    ti_targets_C64P__1_0_6__0_13 [shape=record,label="ti.targets.C64P|1,0,6.0,13",style=filled, fillcolor=lightgrey];
+    ti_targets_rts6000__top -> ti_targets_C64P__1_0_6__0_13 [ltail=cluster10];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_fc_dman3__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster12];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_node__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster15];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_utils_trace__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster17];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_utils_xdm__top -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster18];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_fc_acpy3__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster19];
+    ti_targets_C64P__1_0_6__0_14 [shape=record,label="ti.targets.C64P|1,0,6.0,14",style=filled, fillcolor=lightgrey];
+    ti_rtdx__bot -> ti_targets_C64P__1_0_6__0_14 [ltail=cluster21];
+    ti_targets_C64P__1_0_6__0_14 [shape=record,label="ti.targets.C64P|1,0,6.0,14",style=filled, fillcolor=lightgrey];
+    ti_bios__bot -> ti_targets_C64P__1_0_6__0_14 [ltail=cluster23];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_fc_dskt2__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster24];
+    ti_targets_C64P__1_0_6__0_9 [shape=record,label="ti.targets.C64P|1,0,6.0,9",style=filled, fillcolor=lightgrey];
+    ti_bios_utils__bot -> ti_targets_C64P__1_0_6__0_9 [ltail=cluster25];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_alg__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster32];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_osal_bios__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster33];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_ipc_bios__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster34];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster35];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_bioslog__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster36];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_video__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster37];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_examples_codecs_viddec_copy__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster38];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_examples_codecs_videnc_copy__bot -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster39];
+    ti_targets_C64P__1_0_6__0_16 [shape=record,label="ti.targets.C64P|1,0,6.0,16",style=filled, fillcolor=lightgrey];
+    video_copy__top -> ti_targets_C64P__1_0_6__0_16 [ltail=cluster40];
+}

@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.apps.audio_copy.dualcpu.evmDM6446' release='1, 0, 0' xmlns='xdc/services/spec'>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Codec+Engine+build+support+package+for+the+audio_copy+example.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+package+simply+provides+a+makefile+which+builds+each+app.'/>
+    </autodoc>
+</package>

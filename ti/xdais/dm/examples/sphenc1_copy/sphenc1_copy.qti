@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\sphenc1_copy_ti.h",
+  ],
+  interfaceName: "ISPHENC1COPY",
+  baseDir: ".",
+  moduleName: "SPHENC1COPY",
+  architecture: "C64P",
+  library: "lib\\sphenc1_copy.a64P",
+}

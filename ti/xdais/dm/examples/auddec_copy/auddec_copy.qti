@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\auddec_copy_ti.h",
+  ],
+  interfaceName: "IAUDDECCOPY",
+  baseDir: ".",
+  moduleName: "AUDDECCOPY",
+  architecture: "C64P",
+  library: "lib\\auddec_copy.a64P",
+}

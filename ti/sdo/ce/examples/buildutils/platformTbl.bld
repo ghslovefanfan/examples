@@ -1,0 +1,20 @@
+/* --COPYRIGHT--
+ *  Copyright $(CPYYEAR)
+ *  $(COMPANY_NAME)
+ *
+ *  All rights reserved.  Property of $(COMPANY_NAME)
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * --/COPYRIGHT--
+ */
+/*
+ *  ======== platformTbl.bld ========
+ */
+
+var buildPlatforms = {
+    "C64P"    : [{platform : "evmDM6446"}, {platform : "evmDM6437"},
+                 {platform : "evmDM648"}, {platform : "evmDM6467"}],
+    "MVArm9"  : [{platform : "evmDM6446"}, {platform : "evmDM6467"}],
+    "UCArm9"  : [{platform : "evmDM6446"}, {platform : "evmDM6467"}],
+    "Linux86" : [{platform : null}], // use the default platform
+};

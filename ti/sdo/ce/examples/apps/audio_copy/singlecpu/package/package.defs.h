@@ -1,0 +1,4 @@
+#ifndef ti_sdo_ce_examples_apps_audio_copy_singlecpu__
+#define ti_sdo_ce_examples_apps_audio_copy_singlecpu__
+
+#endif /* ti_sdo_ce_examples_apps_audio_copy_singlecpu__ */ 

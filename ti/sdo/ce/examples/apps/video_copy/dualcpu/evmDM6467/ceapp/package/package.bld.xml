@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ceapp" version="">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/ceapp_x470MV.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="/opt/dvsdk_1_40_02_33/codec_engine_2_10_02/examples/ti/sdo/ce/examples/apps/video_copy/dualcpu/evmDM6467/ceapp.cfg"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/ceapp_x470MV.mak" src="package.bld"/>
+        <srcFile name="package/cfg/ceapp_x470MV.o470MV.dep" src="package/cfg/ceapp_x470MV.c"/>
+        <srcFile name="package/cfg/ceapp_x470MV.dep" src="package/cfg/ceapp_x470MV.cfg"/>
+        <srcFile name="package/rel/ceapp.tar.dep" src="package/rel/ceapp.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,3.4,3"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/opt/mv_pro_4.0.1/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="ceapp"
+        pname="ceapp.x470MV"
+        target="gnu.targets.MVArm9"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/ceapp_x470MV.cfg"
+        xCfgPrefix="package/cfg/ceapp_x470MV"
+        cfgScript="/opt/dvsdk_1_40_02_33/codec_engine_2_10_02/examples/ti/sdo/ce/examples/apps/video_copy/dualcpu/evmDM6467/ceapp.cfg"
+        />
+    </executables>
+    <tests>
+    <test exeName="ceapp.x470MV"
+        args=""
+        groupName="ceapp.x470MV"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ceapp"
+        pname="ceapp.tar"
+        label="default"
+    >
+        <file name="package/package.xdc.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

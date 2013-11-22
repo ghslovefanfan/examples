@@ -1,0 +1,31 @@
+%%{
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+
+%%}
+/*
+ *  Create symbols that mark the base and end of the memory segment BUFMEM.
+ *  (TODO: Is there a better way to do this?)
+ */
+SECTIONS {
+    .bufmem_base: {
+        _BUFMEM_base = .;
+    } > BUFMEM
+    .bufmem_end: {
+        _BUFMEM_end = .;
+        . += 1;
+    } > BUFMEM (HIGH)
+}
+
+%%{
+/*
+ * @(#) ti.sdo.ce.examples.apps.audio1_ires; 1,0,0,96; 9-9-2008 02:00:21; /db/atree/library/trees/ce-h27x/src/
+ */
+
+%%}

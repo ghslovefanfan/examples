@@ -1,0 +1,71 @@
+%%{
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+
+%%}
+%%{
+    var rtsLib = this.build.target.rootDir + "/lib";
+    var chipType = prog.build.cfgArgs.chipType;
+    var debugFlag = prog.build.cfgArgs.debugFlag; 
+    var dskt2 = xdc.loadPackage("ti.sdo.fc.dskt2");
+    var acpy3 = xdc.loadPackage("ti.sdo.fc.acpy3");
+    var dman3 = xdc.loadPackage("ti.sdo.fc.dman3");
+    var dskt2Lib = "dskt2"; 
+    var gt = xdc.loadPackage("ti.sdo.utils.trace");
+    var gtinfra = xdc.loadPackage("ti.sdo.fc.utils.gtinfra");
+    var libExt = "";
+    if (debugFlag = true) {
+        libExt += "d";
+        dskt2Lib += "d";   
+    }
+ 
+    libExt += ".a64P";
+    dskt2Lib += ".a64P";
+
+%%}
+
+/* RTS library search path */
+-i"`rtsLib`"
+
+-i"`new java.io.File(acpy3.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(dman3.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(dskt2.packageBase).getCanonicalPath()`"
+-i"`new java.io.File(gt.packageBase).getCanonicalPath()`/lib"
+-i"`new java.io.File(gtinfra.packageBase).getCanonicalPath()`"
+
+-l"acpy3`libExt`"
+-l"dman3`libExt`"
+-l"gt_noOs`libExt`"
+-l"gt`libExt`"
+-l"`dskt2Lib`"
+-lfcpy_ti.a64P
+-l../../../../../../ti/sdo/fc/utils/api/api.a64P
+
+%if (chipType == "2430") {
+"2430_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm6446") {
+"dm6446_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm648") {
+"dm648_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm6437") {
+"dm6437_nobios/fastcopytest.cmd"
+%} else if (chipType == "C6455") {
+"C6455_nobios/fastcopytest.cmd"
+%} else if (chipType == "dm6467") {
+"dm6467_nobios/fastcopytest.cmd"
+%} else {
+% throw("Unknown chip type !");
+%}
+ 
+%%{
+/*
+ * @(#) ti.sdo.fc.dman3.examples.fastcopy; 1,0,0,141; 9-9-2008 23:51:14; /db/atree/library/trees/fc-e20x/src/
+ */
+
+%%}

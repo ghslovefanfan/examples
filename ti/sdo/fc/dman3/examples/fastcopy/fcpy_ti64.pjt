@@ -1,0 +1,48 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectName="fcpy_ti"
+ProjectDir="$(Proj_dir)"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="InstrumentedDebug"
+Config="InstrumentedRelease"
+Config="Release"
+
+[Source Files]
+Source="fcpy_ti.c"
+Source="fcpy_ti_ialg.c"
+Source="fcpy_ti_idma3.c"
+Source="fcpy_ti_idma3vt.c"
+Source="fcpy_ti_ifcpy.c"
+Source="fcpy_ti_ifcpyvt.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o"lib/fcpy_tid.a64P"
+
+["Archiver" Settings: "InstrumentedDebug"]
+Options=-r -o".\InstrumentedDebug\fcpy_ti64.lib"
+
+["Archiver" Settings: "InstrumentedRelease"]
+Options=-r -o".\InstrumentedRelease\fcpy_ti64.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o"lib/fcpy_ti.a64P"
+
+["Compiler" Settings: "Debug"]
+Options=-g -qq -q -s -oe -eoo64P -fr"$(Proj_dir)\debug" -i"." -i"%XDAIS_INSTALL_DIR%/packages" -i"%FC_INSTALL_DIR%/packages" -mv6400+
+
+["Compiler" Settings: "InstrumentedDebug"]
+Options=-g -q -eoo64P -fr"$(Proj_dir)\InstrumentedDebug" -i"." -i"%XDAIS_INSTALL_DIR%/packages" -i"%FC_INSTALL_DIR%/packages" -mv6400+
+
+["Compiler" Settings: "InstrumentedRelease"]
+Options=-q -o2 -eoo64P -fr"$(Proj_dir)\InstrumentedRelease" -i"." -i"%XDAIS_INSTALL_DIR%/packages" -i"%FC_INSTALL_DIR%/packages" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-q -o2 -eoo64P -fr"$(Proj_dir)\release" -i"." -i"%XDAIS_INSTALL_DIR%/packages" -i"%FC_INSTALL_DIR%/packages" -mv6400+
+

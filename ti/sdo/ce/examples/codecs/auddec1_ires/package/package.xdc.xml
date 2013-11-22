@@ -1,0 +1,57 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.codecs.auddec1_ires' release='' xmlns='xdc/services/spec'>
+    <imports name='ti.sdo.fc.ires.examples.codecs.auddec1' version=''/>
+    <imports name='ti.sdo.ce.audio1'/>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Simple+Codec+Engine+compatible+audio+1.0+%22decoder%22%2C+wrapping+the+audio+1.0'/>
+        <comment line='-1' text='++decode+IRES+copy+codec+distributed+with+xDAIS.+This+codec+implements+the'/>
+        <comment line='-1' text='++IRES_Fxns+interface.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+codec+illustrates+the+simplest+integration+into+the+Codec'/>
+        <comment line='-1' text='++Engine.++Only+three+files+are+required+to+integrate+into+the+codec+engine%3A'/>
+    </autodoc>
+    <autodoc tag='details' mode='dlist'>
+        <comment line='-1' text='%09-+%60package.xdc%60'/>
+        <comment line='-1' text='%09++++This+file+is+required+to+declare+a+name+for+this+package+and+to'/>
+        <comment line='-1' text='%09++++list+all+codec+interfaces+available.'/>
+        <comment line='-1' text='%09-+%60AUDDEC1_IRES.xdc%60'/>
+        <comment line='-1' text='%09++++This+file+specifies+a+codec+%28named+AUDDEC1_IRES%29+that+is'/>
+        <comment line='-1' text='++++++++++provided+by+this+package.'/>
+        <comment line='-1' text='%09-+%60AUDDEC1_IRES.xs%60'/>
+        <comment line='-1' text='%09++++This+file+implements+the+functions+required+by+the+ICodec'/>
+        <comment line='-1' text='%09++++interface%3B+these+functions+enable+the+codec+to+describe+its'/>
+        <comment line='-1' text='%09++++non-functional+requirements+such+as+stack+size.'/>
+        <comment line='-1' text=''/>
+        <comment line='-1' text='++Integration+into+the+Codec+Engine+requires+no+change+to+the+codecs'/>
+        <comment line='-1' text='++libraries.'/>
+        <comment line='-1' text='+'/>
+    </autodoc>
+    <module name='AUDDEC1_IRES' extends='ti.sdo.ce.audio1.IAUDDEC1' hostonly='1'>
+        <autodoc tag='summary'>
+            <comment line='-1' text='++AUDDEC1_IRES+codec+specification'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++This+file+specifies+information+necessary+to+integrate+with+the+Codec'/>
+            <comment line='-1' text='++Engine.'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++By+inheriting+ti.sdo.ce.audio1.IAUDDEC1%2C+AUDDEC1_IRES+declares'/>
+            <comment line='-1' text='++that+it+%22is+a%22+audio+1.0+decoder+algorithm.++This+allows+the+Codec'/>
+            <comment line='-1' text='++Engine+to+automatically+supply+simple+stubs+and+skeletons+for'/>
+            <comment line='-1' text='++transparent+execution+of+DSP+codecs+by+the+GPP.'/>
+        </autodoc>
+        <autodoc tag='details'>
+            <comment line='-1' text='++In+addition+to+declaring+the+type+of+the+AUDDEC1_IRES+algorithm%2C+we'/>
+            <comment line='-1' text='++declare+the+external+symbol+required+by+xDAIS+that+identifies+the'/>
+            <comment line='-1' text='++algorithms+implementation+functions.'/>
+        </autodoc>
+        <config name='ialgFxns' line='-1' hostonly='1' override='1' readonly='1' type='K%21String%21%24' code='s' init='%22AUDDEC1_TI_AUDDECIRES%22'>
+            <autodoc tag='summary'>
+                <comment line='-1' text='++name+of+this+algorithm%27s+xDAIS+alg+fxn+table'/>
+            </autodoc>
+        </config>
+        <config name='iresFxns' line='-1' hostonly='1' override='1' readonly='1' type='K%21String%21%24' code='s' init='%22AUDDEC1_TI_IRES%22'>
+        </config>
+    </module>
+</package>

@@ -1,0 +1,18 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/* use the all_codecs's TCF file since the BIOS configuration needed for
+ * the two example servers is identical; if you want to have different BIOS
+ * configuration, copy the all_codecs' TCF file over this file.
+ */
+utils.importFile( "../../all_codecs/all.tcf" );
+/*
+ *  @(#) ti.sdo.ce.examples.servers.video_copy.evmDM6446; 1, 0, 0,81; 9-9-2008 02:04:27; /db/atree/library/trees/ce-h27x/src/
+ */
+

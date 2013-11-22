@@ -1,0 +1,42 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/*
+ *  ======== package.bld ========
+ */
+
+//Pkg.attrs.profile = "debug";
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+
+/*
+ * Create an array containing the files to include in this package.  Note
+ * that the extension is added by XDC, so it need not be explicitly specified.
+ */
+var SRCS = ["scale.c", "scale_skel.c", "scale_stubs.c"];
+
+Pkg.otherFiles = [
+    "scale.h",
+];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+
+    Pkg.addLibrary("lib/scale", targ, {
+    }).addObjects(SRCS);
+
+    Pkg.addLibrary("lib/scale_debug", targ, {
+        profile  : "debug"
+    }).addObjects(SRCS);
+}
+/*
+ *  @(#) ti.sdo.ce.examples.extensions.scale; 1,0,0,131; 9-9-2008 02:04:04; /db/atree/library/trees/ce-h27x/src/
+ */
+

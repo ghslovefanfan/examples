@@ -1,0 +1,25 @@
+package/cfg/video_copy_x64Pcfg_c.o64P: package/cfg/video_copy_x64Pcfg_c.c package/cfg/video_copy_x64Pcfg.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/std.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/prd.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/swi.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/tsk.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/log.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/tistdtypes.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/fxn.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/sts.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/hwi.h /opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stdarg.h /opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stddef.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/knl.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/sem.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/sys.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/trg.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/_hook.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/_log.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/trc.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/atm.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/que.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/obj.h /opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/mem.h 
+package/cfg/video_copy_x64Pcfg_c.c:
+package/cfg/video_copy_x64Pcfg.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/std.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/prd.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/swi.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/tsk.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/log.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/tistdtypes.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/fxn.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/sts.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/hwi.h:
+/opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stdarg.h:
+/opt/dvsdk_1_40_02_33/cg6x_6_0_16/include/stddef.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/knl.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/sem.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/sys.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/trg.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/_hook.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/_log.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/trc.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/atm.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/que.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/obj.h:
+/opt/dvsdk_1_40_02_33/bios_5_32_01/packages/ti/bios/include/mem.h:

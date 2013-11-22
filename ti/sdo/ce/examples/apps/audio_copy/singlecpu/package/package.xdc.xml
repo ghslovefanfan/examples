@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.apps.audio_copy.singlecpu' release='' xmlns='xdc/services/spec'>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Codec+Engine+encode-decode+example+which+utilizes+audio+codecs+that'/>
+        <comment line='-1' text='++implement+the+0.9+xDM+audio+interfaces.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+example+builds+using+the+XDC+build+tools%2C+and+is+portable+to'/>
+        <comment line='-1' text='++multiple+single+procesor+execution+environments.++The+following+files+are'/>
+        <comment line='-1' text='++included+in+this+package%3A'/>
+    </autodoc>
+    <autodoc tag='details' mode='dlist'>
+        <comment line='-1' text='%09-+%60package.xdc%60'/>
+        <comment line='-1' text='%09++++This+file+is+required+to+declare+a+globally+unique+name+for+this'/>
+        <comment line='-1' text='%09++++package.'/>
+        <comment line='-1' text='%09-+%60package.bld%60'/>
+        <comment line='-1' text='%09++++This+file+is+the+build+script+describing+the+application+to+the'/>
+        <comment line='-1' text='%09++++XDC+built+tools.'/>
+        <comment line='-1' text='%09-+%60makefile%60'/>
+        <comment line='-1' text='%09++++A+usability+makefile+wrapper+around+the+XDC+build+tools.'/>
+        <comment line='-1' text='%09-+%60local.cfg%60'/>
+        <comment line='-1' text='%09++++The+XDC+configuration+file+for+this+executable%2C+when+configured'/>
+        <comment line='-1' text='%09++++to+run+%22local%22+codecs.++This+is+the+typical+configuration+for'/>
+        <comment line='-1' text='%09++++single+processor+excution+environments.'/>
+        <comment line='-1' text='%09-+%60local.tcf%60'/>
+        <comment line='-1' text='%09++++The+BIOS+configuration+file+for+this+executable.++This+file+is'/>
+        <comment line='-1' text='%09++++only+necessary+when+building+for+a+BIOS+runtime+environment.'/>
+        <comment line='-1' text='++++++++++It%27s+base+name+must+match+that+of+the+XDC+config+file.'/>
+        <comment line='-1' text='%09-+%60app.c%60'/>
+        <comment line='-1' text='%09++++The+primary+source+file+for+this+executable.'/>
+        <comment line='-1' text='%09-+%60main.c%60+and+%60main_native.c%60'/>
+        <comment line='-1' text='%09++++The+execution+runtime-specific+entry+point+for+this+executable.'/>
+        <comment line='-1' text='%09++++This+isolates+any+runtime-specific+startup+code+from+the+generic'/>
+        <comment line='-1' text='%09++++application.'/>
+        <comment line='-1' text='+'/>
+    </autodoc>
+</package>

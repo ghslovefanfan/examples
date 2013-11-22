@@ -1,0 +1,31 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/*
+ *  ======== bufres_test.tcf ========
+ */
+
+utils.importFile("../common.tci");
+
+// Add instance TSK.TSK_myIdle
+TSK_smain = prog.module("TSK").create("TSK_myIdle");
+TSK_smain.stackSize = 0x1000;
+TSK_smain.fxn = prog.extern("myIdle");
+TSK_smain.priority = 1;                   // Must run at max priority
+
+// Disable the BIOS clock
+bios.PRD.USECLK = false;
+bios.CLK.ENABLECLK = false;
+
+/* generate the configuration files */
+prog.gen();
+/*
+ *  @(#) ti.sdo.fc.rman.examples.bufres_yield; 1, 0, 0,83; 9-9-2008 23:54:37; /db/atree/library/trees/fc-e20x/src/
+ */
+

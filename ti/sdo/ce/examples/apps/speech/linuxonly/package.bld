@@ -1,0 +1,27 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+
+/*
+ *  ======== package.bld ========
+ */
+
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+
+Pkg.otherFiles = [
+    "makefile",
+    "in.dat",
+];
+/*
+ *  @(#) ti.sdo.ce.examples.apps.speech.linuxonly; 1,0,0,134; 9-9-2008 02:01:17; /db/atree/library/trees/ce-h27x/src/
+ */
+

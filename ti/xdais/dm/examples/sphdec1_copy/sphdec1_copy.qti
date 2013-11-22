@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\sphdec1_copy_ti.h",
+  ],
+  interfaceName: "ISPHDEC1COPY",
+  baseDir: ".",
+  moduleName: "SPHDEC1COPY",
+  architecture: "C64P",
+  library: "lib\\sphdec1_copy.a64P",
+}

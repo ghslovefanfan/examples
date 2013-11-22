@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\audenc1_copy_ti.h",
+  ],
+  interfaceName: "IAUDENC1COPY",
+  baseDir: ".",
+  moduleName: "AUDENC1COPY",
+  architecture: "C64P",
+  library: "lib\\audenc1_copy.a64P",
+}

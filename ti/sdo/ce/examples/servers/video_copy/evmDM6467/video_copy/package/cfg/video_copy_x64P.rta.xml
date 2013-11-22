@@ -1,0 +1,8 @@
+<xdc.runtime.Types.RtaDecoderData>
+  <targetName>ti.targets.C64P</targetName>
+  <bitsPerChar>8</bitsPerChar>
+  <argSize>4</argSize>
+  <eventSize>48</eventSize>
+  <modMap-length>0</modMap-length>
+  <evtMap-length>0</evtMap-length>
+</xdc.runtime.Types.RtaDecoderData>

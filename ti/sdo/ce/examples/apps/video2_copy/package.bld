@@ -1,0 +1,96 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+
+/*
+ *  ======== package.bld ========
+ */
+
+var Build = xdc.useModule('xdc.bld.BuildEnvironment');
+var Pkg = xdc.useModule('xdc.bld.PackageContents');
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+
+// Uncomment this to build debug binaries
+//Pkg.attrs.profile = "debug";
+
+/*
+ * This statement places BIOS headers on the include path, which is necessary
+ * for the TConf-generated assembly files.
+ */
+Pkg.uses = [ "ti/bios/include" ];
+
+/* This script (and others) use the common table defined in this file. */
+utils.importFile("ti/sdo/ce/examples/buildutils/platformTbl.bld");
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    var targPlatforms = buildPlatforms[targ.name];
+
+    print("building for target " + targ.name + " ...");
+    for (var j = 0; j < targPlatforms.length; j++) {
+        var platform = targPlatforms[j];
+        var platName = platform.platform;
+
+        addExe("app", targ, platName, "local");
+
+        if (targ.name.match("MVArm9") || targ.name.match("UCArm9")) {
+            /* target which supports "remote" algorithms */
+            addExe("app", targ, platName, "remote");
+        }
+    }
+}
+
+/*
+ *  ======== addExe ========
+ */
+function addExe(name, targ, platform, cfg)
+{
+    // if platform is null, use the target's default platform
+    var plat = (platform == null) ? targ.platform : "ti.platforms." + platform;
+
+    // Get the platform name minus the "ti.platforms" prefix
+    var idx = plat.lastIndexOf('.');
+    var platShort = plat.substr(idx + 1);
+
+    /* if on a C64, cache is enabled, and buffer alignment is 128 */
+    var compileOpts = targ.suffix.match("64") ?
+        "-DBUFALIGN=128 -DCACHE_ENABLED" : "";
+
+    /*
+     * Create the list of source files to build.
+     * targ.os is undefined for BIOS.  BIOS apps require 'main_BIOS.c' as
+     * a BIOS task is spawned.  All other OS's use 'main_native.c'.
+     * BIOS apps also set 'cfgScript' to the .tcf script.  All others use the
+     * .cfg script.
+     */
+    var srcs = [name + ".c"];
+    if (targ.os == undefined) {
+        /* BIOS app */
+        srcs.push("main_BIOS.c");
+        suffix = ".tcf";
+    }
+    else {
+        /* non-BIOS app */
+        srcs.push("main_native.c");
+        suffix = ".cfg";
+    }
+
+
+    Pkg.addExecutable(platShort + '/' + name + '_' + cfg, targ, plat, {
+        copts: compileOpts,
+        cfgScript: cfg + suffix,
+        cfgArgs: "{platform: \"" + plat + "\"}",
+    }).addObjects(srcs);
+}
+/*
+ *  @(#) ti.sdo.ce.examples.apps.video2_copy; 1, 0, 0,46; 9-9-2008 02:01:45; /db/atree/library/trees/ce-h27x/src/
+ */
+

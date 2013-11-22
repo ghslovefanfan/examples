@@ -1,0 +1,49 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/*
+ *  ======== local.tcf ========
+ */
+
+/* Import shared .tci file that will load the platform */
+utils.importFile("ti/sdo/ce/examples/buildutils/app_common.tci");
+
+/* import bios configuration for the ti.sdo.ce.osal package */
+utils.importFile("ti/sdo/ce/osal/bios/bios.tci");
+
+/* set all BIOS data and code sections to be in DDR2 */
+bios.setMemDataHeapSections(prog, bios.DDR2);
+bios.setMemDataNoHeapSections(prog, bios.DDR2);
+bios.setMemCodeSections(prog, bios.DDR2);
+
+/*  you can selectively override DDR2 default set above, e.g.
+ *  bios.MEM.MALLOCSEG = bios.<some segment name>;
+ *  bios.MEM.BIOSOBJSEG = bios.<some segment name>;
+ *  bios.TSK.STACKSEG = bios.<some segment name>;
+ */
+
+/* Take a chunk of L1DSRAM for the buffer resource memory */
+var buflen = 0x1000;
+bios.L1DSRAM.heapSize -= buflen;
+bios.L1DSRAM.len -= buflen;
+
+var bufbase = bios.L1DSRAM.base + bios.L1DSRAM.len;
+
+var mem = prog.module("MEM").create("BUFMEM");
+mem.base = bufbase;
+mem.len = buflen;
+mem.createHeap = false;
+
+if (config.hasReportedError == false) {
+    prog.gen();
+}
+/*
+ *  @(#) ti.sdo.ce.examples.apps.audio1_ires; 1,0,0,96; 9-9-2008 02:00:21; /db/atree/library/trees/ce-h27x/src/
+ */
+

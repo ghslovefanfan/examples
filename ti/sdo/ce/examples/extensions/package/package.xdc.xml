@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.extensions' release='' xmlns='xdc/services/spec'>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Codec+Engine+build+support+package+for+the+extension+examples.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+package+simply+provides+a+makefile+which+builds+each+extension'/>
+        <comment line='-1' text='++package.'/>
+    </autodoc>
+</package>

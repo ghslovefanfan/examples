@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.ce.examples.apps.speech.dsponly" version="">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/evmDM6437/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evmDM648/app_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64P.c"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM6437/app_x64Pcfg.s62"/>
+        <srcFile name="main_BIOS.c"/>
+        <srcFile name="app.c"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM648/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64P.c"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evmDM6437/app_x64P.c"/>
+        <srcFile name="package/cfg/evmDM648/app_x64P.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="app.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64Pcfg.o64P.dep" src="package/cfg/evmDM6446/app_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evmDM6446/app/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/evmDM6446/app/main_BIOS.o64P.dep" src="main_BIOS.c"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64P.o64P.dep" src="package/cfg/evmDM6446/app_x64P.c"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64Pcfg_c.o64P.dep" src="package/cfg/evmDM6446/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM6446/app_x64P.dep" src="package/cfg/evmDM6446/app_x64P.cfg"/>
+        <srcFile name="package/cfg/evmDM6437/app_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evmDM6437/app/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/evmDM6437/app/main_BIOS.o64P.dep" src="main_BIOS.c"/>
+        <srcFile name="package/cfg/evmDM6437/app_x64Pcfg.o64P.dep" src="package/cfg/evmDM6437/app_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evmDM6437/app_x64P.o64P.dep" src="package/cfg/evmDM6437/app_x64P.c"/>
+        <srcFile name="package/cfg/evmDM6437/app_x64Pcfg_c.o64P.dep" src="package/cfg/evmDM6437/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM6437/app_x64P.dep" src="package/cfg/evmDM6437/app_x64P.cfg"/>
+        <srcFile name="package/cfg/evmDM648/app_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evmDM648/app/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/evmDM648/app/main_BIOS.o64P.dep" src="main_BIOS.c"/>
+        <srcFile name="package/cfg/evmDM648/app_x64Pcfg.o64P.dep" src="package/cfg/evmDM648/app_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evmDM648/app_x64Pcfg_c.o64P.dep" src="package/cfg/evmDM648/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM648/app_x64P.o64P.dep" src="package/cfg/evmDM648/app_x64P.c"/>
+        <srcFile name="package/cfg/evmDM648/app_x64P.dep" src="package/cfg/evmDM648/app_x64P.cfg"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/evmDM6467/app/app.o64P.dep" src="app.c"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64Pcfg_c.o64P.dep" src="package/cfg/evmDM6467/app_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/evmDM6467/app/main_BIOS.o64P.dep" src="main_BIOS.c"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64Pcfg.o64P.dep" src="package/cfg/evmDM6467/app_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64P.o64P.dep" src="package/cfg/evmDM6467/app_x64P.c"/>
+        <srcFile name="package/cfg/evmDM6467/app_x64P.dep" src="package/cfg/evmDM6467/app_x64P.cfg"/>
+        <srcFile name="package/rel/ti_sdo_ce_examples_apps_speech_dsponly.tar.dep" src="package/rel/ti_sdo_ce_examples_apps_speech_dsponly.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.evmDM6446"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="evmDM6446/app"
+        pname="evmDM6446/app.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6446"
+        profile="release"
+        xCfgScript="package/cfg/evmDM6446/app_x64P.cfg"
+        xCfgPrefix="package/cfg/evmDM6446/app_x64P"
+        cfgScript="app.tcf"
+        cfgArgs="%7Bplatform%3A%20%22ti.platforms.evmDM6446%22%7D"
+        />
+    <executable name="evmDM6437/app"
+        pname="evmDM6437/app.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6437"
+        profile="release"
+        xCfgScript="package/cfg/evmDM6437/app_x64P.cfg"
+        xCfgPrefix="package/cfg/evmDM6437/app_x64P"
+        cfgScript="app.tcf"
+        cfgArgs="%7Bplatform%3A%20%22ti.platforms.evmDM6437%22%7D"
+        />
+    <executable name="evmDM648/app"
+        pname="evmDM648/app.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM648"
+        profile="release"
+        xCfgScript="package/cfg/evmDM648/app_x64P.cfg"
+        xCfgPrefix="package/cfg/evmDM648/app_x64P"
+        cfgScript="app.tcf"
+        cfgArgs="%7Bplatform%3A%20%22ti.platforms.evmDM648%22%7D"
+        />
+    <executable name="evmDM6467/app"
+        pname="evmDM6467/app.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6467"
+        profile="release"
+        xCfgScript="package/cfg/evmDM6467/app_x64P.cfg"
+        xCfgPrefix="package/cfg/evmDM6467/app_x64P"
+        cfgScript="app.tcf"
+        cfgArgs="%7Bplatform%3A%20%22ti.platforms.evmDM6467%22%7D"
+        />
+    </executables>
+    <tests>
+    <test exeName="evmDM6446/app.x64P"
+        args=""
+        groupName="evmDM6446/app.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="evmDM6437/app.x64P"
+        args=""
+        groupName="evmDM6437/app.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="evmDM648/app.x64P"
+        args=""
+        groupName="evmDM648/app.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    <test exeName="evmDM6467/app.x64P"
+        args=""
+        groupName="evmDM6467/app.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_ce_examples_apps_speech_dsponly"
+        pname="ti_sdo_ce_examples_apps_speech_dsponly.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.xdc.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

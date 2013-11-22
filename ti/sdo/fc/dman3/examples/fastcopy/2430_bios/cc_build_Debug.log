@@ -1,0 +1,20 @@
+--------------------------  fastcopytest.pjt - Debug  --------------------------
+[fastcopytest.tcf] "C:\CCStudio_v3.2\bios_5_21\xdctools\tconf" -b -Dconfig.importPath="C:/CCStudio_v3.2/bios_5_21/packages"  fastcopytest.tcf
+
+[fastcopytest.c] "C:\CCStudio_v3.2\C6000\cgtools\bin\cl6x" -g -eoo64P -fr"I:/gunjan/fc-d07x/src/ti/sdo/fc/dman3/examples/fastcopy/2430_bios/Debug" -i"." -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/packages" -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/fctools/packages" -d"CHIP_6416" -d"NON_RTSC_CONFIGURATION" -ml3 -mv6400+ --no_compress --disable:sploop -@"2430_bios/Debug.lkf" "fastcopytest.c"
+
+[fcpy.c] "C:\CCStudio_v3.2\C6000\cgtools\bin\cl6x" -g -eoo64P -fr"I:/gunjan/fc-d07x/src/ti/sdo/fc/dman3/examples/fastcopy/2430_bios/Debug" -i"." -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/packages" -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/fctools/packages" -d"CHIP_6416" -d"NON_RTSC_CONFIGURATION" -ml3 -mv6400+ --no_compress --disable:sploop -@"2430_bios/Debug.lkf" "fcpy.c"
+
+[ifcpy.c] "C:\CCStudio_v3.2\C6000\cgtools\bin\cl6x" -g -eoo64P -fr"I:/gunjan/fc-d07x/src/ti/sdo/fc/dman3/examples/fastcopy/2430_bios/Debug" -i"." -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/packages" -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/fctools/packages" -d"CHIP_6416" -d"NON_RTSC_CONFIGURATION" -ml3 -mv6400+ --no_compress --disable:sploop -@"2430_bios/Debug.lkf" "ifcpy.c"
+
+[dman3_config.c] "C:\CCStudio_v3.2\C6000\cgtools\bin\cl6x" -g -eoo64P -fr"I:/gunjan/fc-d07x/src/ti/sdo/fc/dman3/examples/fastcopy/2430_bios/Debug" -i"." -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/packages" -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/fctools/packages" -d"CHIP_6416" -d"NON_RTSC_CONFIGURATION" -ml3 -mv6400+ --no_compress --disable:sploop -@"Debug.lkf" "dman3_config.c"
+
+[fastcopytestcfg.s62] "C:\CCStudio_v3.2\C6000\cgtools\bin\cl6x" -g -eoo64P -fr"I:/gunjan/fc-d07x/src/ti/sdo/fc/dman3/examples/fastcopy/2430_bios/Debug" -i"." -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/packages" -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/fctools/packages" -d"CHIP_6416" -d"NON_RTSC_CONFIGURATION" -ml3 -mv6400+ --no_compress --disable:sploop -@"Debug.lkf" "fastcopytestcfg.s62"
+
+[fastcopytestcfg_c.c] "C:\CCStudio_v3.2\C6000\cgtools\bin\cl6x" -g -eoo64P -fr"I:/gunjan/fc-d07x/src/ti/sdo/fc/dman3/examples/fastcopy/2430_bios/Debug" -i"." -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/packages" -i"I:/gunjan/fc-d07x/src/framework_components_2_00_00_06/fctools/packages" -d"CHIP_6416" -d"NON_RTSC_CONFIGURATION" -ml3 -mv6400+ --no_compress --disable:sploop -@"Debug.lkf" "fastcopytestcfg_c.c"
+
+[Linking...] "C:\CCStudio_v3.2\C6000\cgtools\bin\cl6x" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

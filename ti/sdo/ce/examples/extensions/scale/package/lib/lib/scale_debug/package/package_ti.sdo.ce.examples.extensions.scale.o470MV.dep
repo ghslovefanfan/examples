@@ -1,0 +1,8 @@
+  package/lib/lib/scale_debug/package/package_ti.sdo.ce.examples.extensions.scale.o470MV:   package/package_ti.sdo.ce.examples.extensions.scale.c   /db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/xdc/std.h   /db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-new/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stdarg.h   /db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-new/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stddef.h   /db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/gnu/targets/std.h   /db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/gnu/targets/MVArm9.h   package/package.bld.c
+package/package_ti.sdo.ce.examples.extensions.scale.c:
+/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/xdc/std.h:
+/db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-new/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stdarg.h:
+/db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-new/montavista/pro/devkit/arm/v5t_le/bin/../lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stddef.h:
+/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/gnu/targets/std.h:
+/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/gnu/targets/MVArm9.h:
+package/package.bld.c:

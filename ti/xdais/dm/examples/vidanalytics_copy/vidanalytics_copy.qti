@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\vidanalytics_copy_ti.h",
+  ],
+  interfaceName: "IVIDANALYTICSCOPY",
+  baseDir: ".",
+  moduleName: "VIDANALYTICSCOPY",
+  architecture: "C64P",
+  library: "lib\\vidanalytics_copy.a64P",
+}

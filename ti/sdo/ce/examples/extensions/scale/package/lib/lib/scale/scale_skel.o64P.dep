@@ -1,0 +1,21 @@
+package/lib/lib/scale/scale_skel.o64P: scale_skel.c /db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/xdc/std.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/skel.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/osal/Memory.h ./scale.h ./_scale.h /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdarg.h /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stddef.h /db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/ti/targets/std.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/visa.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/examples/ti/sdo/ce/examples/extensions/scale/../../../../../../ti/sdo/ce/examples/codecs/scale/iscale.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/Engine.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/cetools/packages/ti/xdais/xdas.h /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdint.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/node/node.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/cetools/packages/ti/xdais/ialg.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/Server.h /db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/ipc/Comm.h /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdio.h /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/linkage.h 
+scale_skel.c:
+/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/xdc/std.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/skel.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/osal/Memory.h:
+./scale.h:
+./_scale.h:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdarg.h:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stddef.h:
+/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/ti/targets/std.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/visa.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/examples/ti/sdo/ce/examples/extensions/scale/../../../../../../ti/sdo/ce/examples/codecs/scale/iscale.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/Engine.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/cetools/packages/ti/xdais/xdas.h:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdint.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/node/node.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/cetools/packages/ti/xdais/ialg.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/Server.h:
+/db/atree/library/trees/ce-h27x/src/codec_engine_2_10_02/packages/ti/sdo/ce/ipc/Comm.h:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdio.h:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/linkage.h:

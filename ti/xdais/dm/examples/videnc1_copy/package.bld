@@ -1,0 +1,109 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *  Build script for this package.
+ */
+
+/* This package interestingly _can_ support building the codec with DMA
+ * acceleration.  However, the implementation utilizes the
+ * ti.sdo.fc.acpy3.ACPY3 module from the Framework Components product.
+ * We conditionally add support for this DMA-based acceleration at build time,
+ * depending on whether the ACPY3 module can be found.
+ *
+ * The rationale for making this a _conditional_ dependency on FC is that
+ * xDAIS alg developers are not required to use Framework Components - and this
+ * example should be equally buildable by both types of users.
+ *
+ * Basically, if we can find ACPY3, we'll build the DMA-based version, too.
+ *
+ * Note, the .pjt build doesn't support this ACPY3 build support.
+ */
+try {
+    var acpy3 = xdc.useModule('ti.sdo.fc.acpy3.ACPY3');
+    /* if we got here, acpy3 is set, and will be used below.  Else, it's null */
+}
+catch (e) {
+    print("Remark:  ACPY3 module not found.");
+};
+
+/* If you don't want to redistribute your sources, set this to false. */
+Pkg.attrs.exportSrc = true;
+
+/*
+ * Array of files to include in the release.  Libraries must be explicitly
+ * listed when you don't use the XDC Build.  This list is likely files to be
+ * included in all releases.
+ */
+Pkg.otherFiles = [
+    "videnc1_copy_ti.h",  /* public header. */
+    "lib",                /* release the contents of all the "lib" directory. */
+    "videnc1_copy.qti",   /* qualiTI script */
+
+    /* any release notes or docs can be added here. */
+];
+
+/*
+ *  Optionally, you may also want to redistribute these source files,
+ *  depending on your customer and delivery scenarios.
+ */
+Pkg.otherFiles.$add("pjt/videnc1_copy.pjt");    /* CCS project file */
+Pkg.otherFiles.$add("package.bld");             /* XDC build script */
+Pkg.otherFiles.$add("videnc1_copy_ti_priv.h");  /* Internal interface header */
+
+/* Set this to false if you build with .pjts or other build tooling */
+xdcBuild = true;
+
+if (xdcBuild) {
+    /*
+     * Create an array containing the files to include in this
+     * package.  Note that the extension is added by XDC, so it need
+     * not be explicitly specified.
+     */
+    var SRCS = ["videnc1_copy"];
+
+    for (var i = 0; i < Build.targets.length; i++) {
+        var targ = Build.targets[i];
+
+        print("building for target " + targ.name + " ...");
+
+        /* If on C64P and ACPY3 was found, add a library optimized for EDMA3 */
+        if (acpy3) {
+            /*
+             * The 64P target can provide an optimized implementation that
+             * uses DMA!  We build both a debug and release version of the
+             * DMA-enabled library.
+             */
+            Pkg.addLibrary("lib/videnc1_copy_dma", targ, {
+                copts: "-DUSE_ACPY3 ",
+            }).addObjects(SRCS);
+
+            Pkg.addLibrary("lib/debug/videnc1_copy_dma", targ, {
+                copts: "-DUSE_ACPY3 ",
+                profile: "debug"
+            }).addObjects(SRCS);
+
+        }
+
+        /*
+         * Add a debug and release library to this package, built from the
+         * files described in SRCS[].
+         */
+        Pkg.addLibrary("lib/videnc1_copy", targ).addObjects(SRCS);
+
+        Pkg.addLibrary("lib/debug/videnc1_copy", targ, {
+            profile: "debug"
+        }).addObjects(SRCS);
+    }
+}
+/*
+ *  @(#) ti.xdais.dm.examples.videnc1_copy; 2, 0, 0,118; 5-8-2008 09:07:15; /db/wtree/library/trees/dais-j06x/src/
+ */
+

@@ -1,0 +1,6 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.apps.audio1_ires.audio1_ires_server' release='' xmlns='xdc/services/spec'>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Codec+Engine+Server+for+AUDIO1+IRES+example.'/>
+    </autodoc>
+</package>

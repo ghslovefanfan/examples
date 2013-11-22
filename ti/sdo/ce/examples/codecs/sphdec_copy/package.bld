@@ -1,0 +1,39 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ */
+
+//Pkg.attrs.profile = "debug";
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+
+/*
+ * Create an array containing the files to include in this package.  Note
+ * that the extension is added by XDC, so it need not be explicitly specified.
+ */
+var SRCS = ["sphdec_copy"];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+
+    print("building for target " + targ.name + " ...");
+
+    /*
+     * Add a library to this package and add the files described in
+     * SRCS to the library.
+     */
+    Pkg.addLibrary("lib/sphdec_copy", targ).addObjects(SRCS);
+}
+/*
+ *  @(#) ti.sdo.ce.examples.codecs.sphdec_copy; 1,0,0,132; 9-9-2008 02:03:16; /db/atree/library/trees/ce-h27x/src/
+ */
+

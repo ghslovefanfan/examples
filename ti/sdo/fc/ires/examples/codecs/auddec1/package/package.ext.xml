@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="" label="" date="" buildCount="">
+<package name="ti.sdo.fc.ires.examples.codecs.auddec1"
+    version="1, 0, 0"/>
+<imports>
+    <package name="ti.sdo.fc.ires.bufres"
+        version=""/>
+</imports>
+<references>
+    <package name="ti.xdais"
+        version="1, 2.0, 1">
+        <file name="ialg.h"/>
+        <file name="ires.h"/>
+        <file name="ires_common.h"/>
+        <file name="xdas.h"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/mvl/arm/mvl4.0-root-new/montavista/pro/devkit/arm/v5t_le/"
+        trgs="gnu.targets.MVArm9">
+        <file name="lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stdarg.h"/>
+        <file name="lib/gcc/armv5tl-montavista-linuxeabi/3.4.3/include/stddef.h"/>
+        <file name="target/usr/include/bits/string.h"/>
+        <file name="target/usr/include/bits/string2.h"/>
+        <file name="target/usr/include/features.h"/>
+        <file name="target/usr/include/gnu/stubs.h"/>
+        <file name="target/usr/include/stdlib.h"/>
+        <file name="target/usr/include/string.h"/>
+        <file name="target/usr/include/sys/cdefs.h"/>
+    </targetRoot>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.cmd.sch"/>
+    </package>
+    <package name="xdc"
+        version="1, 1, 0, 0">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="package/xdc.sch"/>
+        <file name="recap.xs"/>
+        <file name="std.h"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+    </package>
+    <package name="gnu.targets"
+        version="1, 0, 0, 2">
+        <file name="ITarget.xs"/>
+        <file name="Linux86.h"/>
+        <file name="MVArm9.h"/>
+        <file name="UCArm9.h"/>
+        <file name="package.xs"/>
+        <file name="package/gnu.targets.sch"/>
+        <file name="std.h"/>
+    </package>
+    <package name="xdc.corevers"
+        version="16, 0, 0, 1">
+        <file name="package/xdc.corevers.sch"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 0">
+        <file name="java/antlr.jar"/>
+        <file name="java/js.jar"/>
+        <file name="java/junit.jar"/>
+        <file name="java/tar.jar"/>
+        <file name="java/xbean.jar"/>
+        <file name="package/xdc.shelf.sch"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu/"
+        trgs="gnu.targets.Linux86">
+        <file name="i686-unknown-linux-gnu/sys-include/bits/endian.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/string.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/string2.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/types.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/typesizes.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/bits/wordsize.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/endian.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/features.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/gnu/stubs.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/stdlib.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/string.h"/>
+        <file name="i686-unknown-linux-gnu/sys-include/sys/cdefs.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stdarg.h"/>
+        <file name="lib/gcc/i686-unknown-linux-gnu/4.1.0/include/stddef.h"/>
+    </targetRoot>
+    <package name="ti.xdais.dm"
+        version="1, 0, 4">
+        <file name="iauddec1.h"/>
+        <file name="iaudio.h"/>
+        <file name="xdm.h"/>
+    </package>
+    <package name="ti.targets"
+        version="1, 0, 0, 1">
+        <file name="ITarget.xs"/>
+        <file name="package.xs"/>
+        <file name="package/ti.targets.sch"/>
+        <file name="std.h"/>
+    </package>
+    <package name="ti.sdo.fc.ires"
+        version="1, 0, 0">
+        <file name="iresman.h"/>
+        <file name="iresman_protocol.h"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.gen.sch"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c55/lead3v3.2.2/Linux/"
+        trgs="ti.targets.C55_large">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="xdc.bld"
+        version="1, 0, 0, 0">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="package.xs"/>
+        <file name="package/xdc.bld.sch"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.intern.xsr.sch"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0">
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.spec.sch"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0">
+        <file name="Clock.xs"/>
+        <file name="java/package.jar"/>
+        <file name="package/xdc.services.global.sch"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/ti/c6x/6.0.16/Linux/"
+        trgs="ti.targets.C64P">
+        <file name="include/linkage.h"/>
+        <file name="include/stdarg.h"/>
+        <file name="include/stddef.h"/>
+        <file name="include/stdint.h"/>
+        <file name="include/string.h"/>
+    </targetRoot>
+    <package name="ti.sdo.fc.ires.bufres"
+        version="1, 0, 0">
+        <file name="bufres.h"/>
+        <file name="package.xs"/>
+        <file name="package/ti.sdo.fc.ires.bufres.sch"/>
+    </package>
+    <targetRoot base="/db/toolsrc/library/vendors2005/opensource/buildroot/10122007/build_arm/staging_dir/usr/"
+        trgs="gnu.targets.UCArm9">
+        <file name="include/bits/uClibc_arch_features.h"/>
+        <file name="include/bits/uClibc_config.h"/>
+        <file name="include/features.h"/>
+        <file name="include/string.h"/>
+        <file name="include/sys/cdefs.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stdarg.h"/>
+        <file name="lib/gcc/arm-linux-uclibcgnueabi/4.2.1/include/stddef.h"/>
+    </targetRoot>
+    <xdcRoot base="/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include/utils.tci"/>
+    </xdcRoot>
+</references>
+<orphans>
+    <file name="/db/atree/library/trees/fc-e20x/src/config.bld"/>
+</orphans>
+</release>

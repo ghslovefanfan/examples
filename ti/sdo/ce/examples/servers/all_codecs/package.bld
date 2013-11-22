@@ -1,0 +1,74 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ */
+
+var serverName = "all";
+
+Pkg.attrs.profile = "debug";
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+
+Pkg.uses = ["ti/bios/include"];
+
+Pkg.otherFiles = [
+    "makefile",
+    "package.bld",
+    "package/info",
+    "link.cmd"
+    ];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+
+    /* only build for BIOS-based targets */
+    if (targ.os == undefined) {
+        /* As no OS is defined, presume BIOS */
+        print("building for target " + targ.name + " ...");
+
+        var targPlatforms = userbldBuildPlatforms[targ.name]; // from user.bld
+
+        for (var j = 0; j < targPlatforms.length; j++) {
+            var platform = targPlatforms[j];
+            var platName = platform.platform;
+            var outDir   = platform.outDir ? platform.outDir : platName;
+
+            if ((platName != "evmDM6446")) {
+                if ((platName != "evmDM6467")) {
+                    print("all_codecs: Skipping unsupported platform " 
+                        + platName);
+                    continue;
+                }
+            }
+
+            // if platform is null, use the target's default platform
+            var plat = (platName == null) ? targ.platform :
+                "ti.platforms." + platName;
+            var name = outDir + "/" + serverName;
+
+            Pkg.addExecutable(name, targ, plat,
+            {
+                cfgScript: serverName + ".tcf",
+                cfgArgs: "{platform: \"" + plat + "\"}",
+                lopts: "-l link.cmd",
+            }).
+            addObjects( [
+                "main.c",
+            ] );
+        }
+    }
+}
+
+/*
+ *  @(#) ti.sdo.ce.examples.servers.all_codecs; 1,0,0,132; 9-9-2008 02:04:16; /db/atree/library/trees/ce-h27x/src/
+ */
+

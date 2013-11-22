@@ -1,0 +1,8 @@
+package/lib/lib/scale/package/package_ti.sdo.ce.examples.extensions.scale.o64P: package/package_ti.sdo.ce.examples.extensions.scale.c /db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/xdc/std.h package/package.bld.c /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdarg.h /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stddef.h /db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/ti/targets/std.h /db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdint.h 
+package/package_ti.sdo.ce.examples.extensions.scale.c:
+/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/xdc/std.h:
+package/package.bld.c:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdarg.h:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stddef.h:
+/db/rtree/install/trees/products/xdcprod-h24/product/Linux/xdc_3_00_06/packages/ti/targets/std.h:
+/db/toolsrc/library/tools/vendors/ti/c6x/6.0.16/Linux/include/stdint.h:

@@ -1,0 +1,7 @@
+// XDC paths setting file, used by the Configuro based CCS .pjt build
+// This file uses javascript syntax
+var CE_INSTALL_DIR = "c:/tisbprod/codec_engine_1_20/";
+
+xdcpaths = CE_INSTALL_DIR + 'cetools/packages;' +
+           CE_INSTALL_DIR + 'packages;' +
+           CE_INSTALL_DIR + 'examples';

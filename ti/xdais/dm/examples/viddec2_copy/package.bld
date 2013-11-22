@@ -1,0 +1,69 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *  Build script for this package.
+ */
+
+/* If you don't want to redistribute your sources, set this to false. */
+Pkg.attrs.exportSrc = true;
+
+/*
+ * Array of files to include in the release.  Libraries must be explicitly
+ * listed when you don't use the XDC Build.  This list is likely files to be
+ * included in all releases.
+ */
+Pkg.otherFiles = [
+    "viddec2_copy_ti.h",  /* public header. */
+    "lib",                /* release the contents of all the "lib" directory. */
+    "viddec2_copy.qti",   /* qualiTI script */
+
+    /* any release notes or docs can be added here. */
+];
+
+/*
+ *  Optionally, you may also want to redistribute these source files,
+ *  depending on your customer and delivery scenarios.
+ */
+Pkg.otherFiles.$add("pjt/viddec2_copy.pjt");    /* CCS project file */
+Pkg.otherFiles.$add("package.bld");             /* XDC build script */
+Pkg.otherFiles.$add("viddec2_copy_ti_priv.h");  /* Internal interface header */
+
+/* Set this to false if you build with .pjts or other build tooling */
+xdcBuild = true;
+
+if (xdcBuild) {
+    /*
+     * Create an array containing the files to include in this
+     * package.  Note that the extension is added by XDC, so it need
+     * not be explicitly specified.
+     */
+    var SRCS = ["viddec2_copy"];
+
+    for (var i = 0; i < Build.targets.length; i++) {
+        var targ = Build.targets[i];
+
+        print("building for target " + targ.name + " ...");
+
+        /*
+         * Add a debug and release library to this package, built from the
+         * files described in SRCS[].
+         */
+        Pkg.addLibrary("lib/viddec2_copy", targ).addObjects(SRCS);
+
+        Pkg.addLibrary("lib/debug/viddec2_copy", targ, {
+            profile: "debug"
+        }).addObjects(SRCS);
+    }
+}
+/*
+ *  @(#) ti.xdais.dm.examples.viddec2_copy; 2, 0, 0,21; 5-8-2008 09:07:08; /db/wtree/library/trees/dais-j06x/src/
+ */
+

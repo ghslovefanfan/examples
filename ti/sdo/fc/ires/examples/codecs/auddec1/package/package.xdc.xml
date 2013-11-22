@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.fc.ires.examples.codecs.auddec1' release='1, 0, 0' xmlns='xdc/services/spec'>
+    <imports name='ti.sdo.fc.ires.bufres' version=''/>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Simple+xDM+1.00+compatible+audio+%22decoder%22.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+example+codec+illustrates+a+simple+implementation+of+the+IAUDDEC1'/>
+        <comment line='-1' text='++interface+and+the+IRES+interface.'/>
+        <comment line='-1' text='++The+implementation+of+the+process%28%29+function+is+a+simple+memcpy.'/>
+    </autodoc>
+</package>

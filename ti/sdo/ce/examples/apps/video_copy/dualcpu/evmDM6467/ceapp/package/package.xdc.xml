@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<package name='ceapp' release='' xmlns='xdc/services/spec'>
+    <autodoc tag='summary'>
+        <comment line='-1' text='+Package+generated+by+xdc.tools.configuro'/>
+    </autodoc>
+    <autodoc tag='_nodoc'>
+    </autodoc>
+</package>

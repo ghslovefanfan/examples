@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.servers.video_copy' release='1, 0, 0' xmlns='xdc/services/spec'>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Codec+Engine+build+support+package+for+the+video_copy+examples.'/>
+    </autodoc>
+    <autodoc tag='details'>
+        <comment line='-1' text='++This+package+simply+provides+a+makefile+which+builds+each+server+package.'/>
+    </autodoc>
+</package>

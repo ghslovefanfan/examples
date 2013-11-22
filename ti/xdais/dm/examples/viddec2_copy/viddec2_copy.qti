@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\viddec2_copy_ti.h",
+  ],
+  interfaceName: "IVIDDEC2COPY",
+  baseDir: ".",
+  moduleName: "VIDDEC2COPY",
+  architecture: "C64P",
+  library: "lib\\viddec2_copy.a64P",
+}

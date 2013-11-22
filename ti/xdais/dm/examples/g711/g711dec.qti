@@ -1,0 +1,10 @@
+algoParams = {
+  vendor: "SUN",
+  headers: [
+  ],
+  interfaceName: "IG711DEC",
+  baseDir: ".",
+  moduleName: "G711DEC",
+  architecture: "C64P",
+  library: "lib\\g711.a64P",
+}

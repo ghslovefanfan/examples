@@ -1,0 +1,55 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ *  Build script for this package.
+ */
+
+//Pkg.attrs.profile = "debug";
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+
+/*
+ * Create an array containing the files to include in this package.  Note
+ * that the extension is added by XDC, so it need not be explicitly specified.
+ */
+var SRCS = ["videnc_copy"];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+    var mycopts = "";
+    print("building for target " + targ.name + " ...");
+
+    /*
+     * Add a library to this package and add the files described in
+     * SRCS to the library.
+     */
+    if (targ.name == "C64P") {
+        /*
+         * The 64P target can provide an optimized implementation that
+         * uses DMA!  So we build 2 libraries, the traditional one
+         * (done outside this if branch), and another one that's
+         * optimized to use DMA.
+         */
+        Pkg.addLibrary("lib/videnc_copy_dma", targ, {
+            copts: "-DIDMA3_USEFULLPACKAGEPATH -DACPY3_USEFULLPACKAGEPATH " +
+                       "-DUSE_ACPY3 ",
+        }).addObjects(SRCS);
+    }
+
+    Pkg.addLibrary("lib/videnc_copy", targ, {
+       copts: mycopts
+    }).addObjects(SRCS);
+}
+/*
+ *  @(#) ti.sdo.ce.examples.codecs.videnc_copy; 1,0,0,132; 9-9-2008 02:03:52; /db/atree/library/trees/ce-h27x/src/
+ */
+

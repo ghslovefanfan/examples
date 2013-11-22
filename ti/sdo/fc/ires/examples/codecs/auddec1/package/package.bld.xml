@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="ti.sdo.fc.ires.examples.codecs.auddec1" version="1, 0, 0">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="auddec1_ti.c"/>
+        <srcFile name="auddec1_ti_ires.c"/>
+        <srcFile name="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+    </sources>
+    <configurations>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/package.cfg.dep" src="package.xdc"/>
+        <srcFile name="lib/debug/auddec1_ti.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti.o64P.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti_ires.o64P.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o64P.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/debug/auddec1_ti.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti.o470MV.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti_ires.o470MV.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o470MV.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/debug/auddec1_ti.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti.o470uC.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti_ires.o470uC.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o470uC.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/auddec1_ti.a470MV.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti.o470MV.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti_ires.o470MV.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o470MV.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/auddec1_ti.a64P.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti.o64P.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti_ires.o64P.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o64P.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/debug/auddec1_ti.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti.o55L.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti_ires.o55L.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o55L.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/auddec1_ti.a470uC.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti.o470uC.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti_ires.o470uC.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o470uC.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/debug/auddec1_ti.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti.o86U.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/auddec1_ti_ires.o86U.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/debug/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o86U.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/auddec1_ti.a55L.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti.o55L.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti_ires.o55L.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o55L.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="lib/auddec1_ti.a86U.mak" src="package.bld"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti.o86U.dep" src="auddec1_ti.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/auddec1_ti_ires.o86U.dep" src="auddec1_ti_ires.c"/>
+        <srcFile name="package/lib/lib/auddec1_ti/package/package_ti.sdo.fc.ires.examples.codecs.auddec1.o86U.dep" src="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <srcFile name="package/rel/ti_sdo_fc_ires_examples_codecs_auddec1.tar.dep" src="package/rel/ti_sdo_fc_ires_examples_codecs_auddec1.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="gnu.targets.Linux86"
+            version="gnu.targets.Linux86{1,0,4.1,0"
+            platform="host.platforms.PC"
+            isa="x86"
+            suffix="86U"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu"
+            os="Linux"
+            rts="gnu.targets.rts86U">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,16"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="/db/atree/library/trees/depot/cgt6x-6.0.16"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="ti.targets.C55_large"
+            version="ti.targets.C55_large{1,0,3.2,2"
+            platform="ti.platforms.sim55xx"
+            isa="55"
+            suffix="55L"
+            rootDir="/db/atree/library/trees/depot/cgt55-3.2.2"
+            os="undefined"
+            rts="ti.targets.rts5500">
+            <model endian="undefined"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+        <target name="gnu.targets.UCArm9"
+            version="gnu.targets.UCArm9{1,0,4.2,1"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470uC"
+            rootDir="/db/toolsrc/library/tools/vendors/opensource/buildroot/10122007/build_arm/staging_dir/usr"
+            os="Linux"
+            rts="gnu.targets.rts470uC">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+        <target name="gnu.targets.MVArm9"
+            version="gnu.targets.MVArm9{1,0,3.4,3"
+            platform="ti.platforms.evmDM6446"
+            isa="v5T"
+            suffix="470MV"
+            rootDir="/db/toolsrc/library/tools/vendors/mvl/arm/mvl4.0-root-new/montavista/pro/devkit/arm/v5t_le"
+            os="Linux"
+            rts="gnu.targets.rts470MV">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    <library name="lib/debug/auddec1_ti"
+        pname="lib/debug/auddec1_ti.a64P"
+        profile="debug"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/auddec1_ti"
+        pname="lib/debug/auddec1_ti.a470MV"
+        profile="debug"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/debug/auddec1_ti"
+        pname="lib/debug/auddec1_ti.a470uC"
+        profile="debug"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/auddec1_ti"
+        pname="lib/auddec1_ti.a470MV"
+        profile="release"
+        target="gnu.targets.MVArm9"/>
+    <library name="lib/auddec1_ti"
+        pname="lib/auddec1_ti.a64P"
+        profile="release"
+        target="ti.targets.C64P"/>
+    <library name="lib/debug/auddec1_ti"
+        pname="lib/debug/auddec1_ti.a55L"
+        profile="debug"
+        target="ti.targets.C55_large"/>
+    <library name="lib/auddec1_ti"
+        pname="lib/auddec1_ti.a470uC"
+        profile="release"
+        target="gnu.targets.UCArm9"/>
+    <library name="lib/debug/auddec1_ti"
+        pname="lib/debug/auddec1_ti.a86U"
+        profile="debug"
+        target="gnu.targets.Linux86"/>
+    <library name="lib/auddec1_ti"
+        pname="lib/auddec1_ti.a55L"
+        profile="release"
+        target="ti.targets.C55_large"/>
+    <library name="lib/auddec1_ti"
+        pname="lib/auddec1_ti.a86U"
+        profile="release"
+        target="gnu.targets.Linux86"/>
+    </libraries>
+    <executables>
+    </executables>
+    <tests>
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="ti_sdo_fc_ires_examples_codecs_auddec1"
+        pname="ti_sdo_fc_ires_examples_codecs_auddec1.tar"
+        label="default"
+        relScript="tisb/release/filters/copyright.rel">
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package_ti.sdo.fc.ires.examples.codecs.auddec1.c"/>
+        <file name="lib/auddec1_ti.a470uC"/>
+        <file name="lib/auddec1_ti.a470MV"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/package.xdc.xml"/>
+        <file name="lib/auddec1_ti.a64P"/>
+        <file name="lib/debug/auddec1_ti.a64P"/>
+        <file name="auddec1_ti_priv.h"/>
+        <file name="lib/auddec1_ti.a55L"/>
+        <file name="auddec1_ti.c"/>
+        <file name="lib"/>
+        <file name="auddec1_ti_ires.c"/>
+        <file name="lib/debug/auddec1_ti.a55L"/>
+        <file name="auddec1_ti.h"/>
+        <file name="lib/auddec1_ti.a86U"/>
+        <file name="package/build.cfg"/>
+        <file name="lib/debug/auddec1_ti.a470uC"/>
+        <file name="lib/debug/auddec1_ti.a470MV"/>
+        <file name="lib/debug/auddec1_ti.a86U"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.cfg.xdc.inc"/>
+        <file name="package.bld"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\videnc1_copy_ti.h",
+  ],
+  interfaceName: "IVIDENC1COPY",
+  baseDir: ".",
+  moduleName: "VIDENC1COPY",
+  architecture: "C64P",
+  library: "lib\\videnc1_copy.a64P",
+}

@@ -1,0 +1,18 @@
+/* --COPYRIGHT--
+ *  Copyright $(CPYYEAR)
+ *  $(COMPANY_NAME)
+ *
+ *  All rights reserved.  Property of $(COMPANY_NAME)
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * --/COPYRIGHT--
+ */
+/*
+ *  ======== package.bld ========
+ */
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+
+Pkg.attrs.relScript = null; // Temp, til makefile is supported
+

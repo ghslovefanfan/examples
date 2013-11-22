@@ -1,0 +1,276 @@
+digraph configuration {
+    size="7.5,10";
+    rankdir=LR;
+    ranksep=".50 equally";
+    concentrate=true;
+    compound=true;
+    label="\nConfiguration for ceapp/ceapp.x470MV"
+  node [font=Helvetica, fontsize=14, fontcolor=black];  subgraph cluster0 {label=""; __cfg [label="/opt/dvsdk_1_40_02_33/codec_engine_2_10_02/examples/ti/sdo/ce/examples/apps/video_copy/dualcpu/evmDM6467/ceapp.cfg", color=white, fontcolor=blue];
+    node [font=Helvetica, fontsize=10];    subgraph cluster1 {
+        label="";
+        xdc__top [shape=box,label="xdc\n1,1,0,0,1203621209308", color=white];
+    }
+    subgraph cluster2 {
+        label="";
+        xdc_corevers__top [shape=box,label="xdc.corevers\n16,0,0,1,1203621227324", color=white];
+    }
+    subgraph cluster3 {
+        label="";
+        xdc_services_global__top [shape=box,label="xdc.services.global\n1,0,0,1203621258506", color=white];
+        xdc_services_global__bot [shape=point,label="", style=invis];
+        xdc_services_global_Clock [style=filled,fillcolor=lightgray, label="Clock"];
+        xdc_services_global__top -> xdc_services_global_Clock[style=invis];
+        xdc_services_global_Clock -> xdc_services_global__bot[style=invis];
+    }
+    subgraph cluster4 {
+        label="";
+        xdc_shelf__top [shape=box,label="xdc.shelf\n1,0,0,0,1203621283947", color=white];
+    }
+    subgraph cluster5 {
+        label="";
+        xdc_services_spec__top [shape=box,label="xdc.services.spec\n1,0,0,0,1203621302332", color=white];
+    }
+    subgraph cluster6 {
+        label="";
+        xdc_services_intern_xsr__top [shape=box,label="xdc.services.intern.xsr\n1,0,0,1203621275337", color=white];
+    }
+    subgraph cluster7 {
+        label="";
+        xdc_services_intern_gen__top [shape=box,label="xdc.services.intern.gen\n1,0,0,0,1203621273519", color=white];
+    }
+    subgraph cluster8 {
+        label="";
+        xdc_services_intern_cmd__top [shape=box,label="xdc.services.intern.cmd\n1,0,0,0,1203621271345", color=white];
+    }
+    subgraph cluster9 {
+        label="";
+        xdc_runtime__top [shape=box,label="xdc.runtime\n2,0,0,0,1203621258434", color=white];
+        xdc_runtime__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster10 {
+        label="";
+        gnu_targets_rts470MV__top [shape=box,label="gnu.targets.rts470MV\n1,0,0,0,1203621000516", color=white];
+    }
+    subgraph cluster11 {
+        label="";
+        ti_xdais_dm__top [shape=box,label="ti.xdais.dm\n1,0,4,1210262746529", color=white];
+    }
+    subgraph cluster12 {
+        label="";
+        ti_xdais__top [shape=box,label="ti.xdais\n1,2,1,1210262742149", color=white];
+    }
+    subgraph cluster13 {
+        label="";
+        ti_sdo_utils_trace__top [shape=box,label="ti.sdo.utils.trace\n1,0,0,1220943366422", color=white];
+        ti_sdo_utils_trace__bot [shape=point,label="", style=invis];
+        ti_sdo_utils_trace_GT [style=filled,fillcolor=lightgray, label="GT"];
+        ti_sdo_utils_trace__top -> ti_sdo_utils_trace_GT[style=invis];
+        ti_sdo_utils_trace_GT -> ti_sdo_utils_trace__bot[style=invis];
+    }
+    subgraph cluster14 {
+        label="";
+        ti_sdo_ce_utils_xdm__top [shape=box,label="ti.sdo.ce.utils.xdm\n1,0,1,1220951322616", color=white];
+    }
+    subgraph cluster15 {
+        label="";
+        ti_sdo_fc_dman3__top [shape=box,label="ti.sdo.fc.dman3\n1,0,3,1220943053023", color=white];
+        ti_sdo_fc_dman3__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster16 {
+        label="";
+        ti_sdo_fc_acpy3__top [shape=box,label="ti.sdo.fc.acpy3\n1,0,2,1220943014135", color=white];
+        ti_sdo_fc_acpy3__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster17 {
+        label="";
+        dsplink_gpp__top [shape=box,label="dsplink.gpp\n3,0,0", color=white];
+        dsplink_gpp__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster18 {
+        label="";
+        ti_sdo_linuxutils_cmem__top [shape=box,label="ti.sdo.linuxutils.cmem\n2,0,1,1204929560755", color=white];
+        ti_sdo_linuxutils_cmem__bot [shape=point,label="", style=invis];
+        ti_sdo_linuxutils_cmem_CMEM [style=filled,fillcolor=lightgray, label="CMEM"];
+        ti_sdo_linuxutils_cmem__top -> ti_sdo_linuxutils_cmem_CMEM[style=invis];
+        ti_sdo_linuxutils_cmem_CMEM -> ti_sdo_linuxutils_cmem__bot[style=invis];
+    }
+    subgraph cluster19 {
+        label="";
+        ti_catalog_c470__top [shape=box,label="ti.catalog.c470\n1,0,1,0,1203561761475", color=white];
+        ti_catalog_c470__bot [shape=point,label="", style=invis];
+        ti_catalog_c470_TMS320CDM6467 [style=filled,fillcolor=lightgray, label="TMS320CDM6467"];
+        ti_catalog_c470__top -> ti_catalog_c470_TMS320CDM6467[style=invis];
+        ti_catalog_c470_TMS320CDM6467 -> ti_catalog_c470__bot[style=invis];
+    }
+    subgraph cluster20 {
+        label="";
+        xdc_platform__top [shape=box,label="xdc.platform\n1,0,1,0,1203621237157", color=white];
+        xdc_platform__bot [shape=point,label="", style=invis];
+        xdc_platform_ExeContext [style=filled,fillcolor=lightgray, label="ExeContext"];
+        xdc_platform__top -> xdc_platform_ExeContext[style=invis];
+        xdc_platform_ExeContext -> xdc_platform__bot[style=invis];
+        xdc_platform_Utils [style=filled,fillcolor=lightgray, label="Utils"];
+        xdc_platform__top -> xdc_platform_Utils[style=invis];
+        xdc_platform_Utils -> xdc_platform__bot[style=invis];
+    }
+    subgraph cluster21 {
+        label="";
+        xdc_cfg__top [shape=box,label="xdc.cfg\n1,0,1,0,1203621225891", color=white];
+        xdc_cfg__bot [shape=point,label="", style=invis];
+        xdc_cfg_Program [style=filled,fillcolor=lightgray, label="Program"];
+        xdc_cfg__top -> xdc_cfg_Program[style=invis];
+        xdc_cfg_Program -> xdc_cfg__bot[style=invis];
+        xdc_cfg_Main [style=filled,fillcolor=lightgray, label="Main"];
+        xdc_cfg__top -> xdc_cfg_Main[style=invis];
+        xdc_cfg_Main -> xdc_cfg__bot[style=invis];
+    }
+    subgraph cluster22 {
+        label="";
+        ti_catalog_c6000__top [shape=box,label="ti.catalog.c6000\n1,0,0,0,1203561781695", color=white];
+        ti_catalog_c6000__bot [shape=point,label="", style=invis];
+    }
+    subgraph cluster23 {
+        label="";
+        ti_platforms_evmDM6467__top [shape=box,label="ti.platforms.evmDM6467\n1,0,0,0,1192229633217", color=white];
+        ti_platforms_evmDM6467__bot [shape=point,label="", style=invis];
+        ti_platforms_evmDM6467_Platform [style=filled,fillcolor=lightgray, label="Platform"];
+        ti_platforms_evmDM6467__top -> ti_platforms_evmDM6467_Platform[style=invis];
+        ti_platforms_evmDM6467_Platform -> ti_platforms_evmDM6467__bot[style=invis];
+    }
+    subgraph cluster24 {
+        label="";
+        ti_sdo_ce_osal__top [shape=box,label="ti.sdo.ce.osal\n2,0,2,1220951127739", color=white];
+        ti_sdo_ce_osal__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_osal_Global [style=filled,fillcolor=lightgray, label="Global"];
+        ti_sdo_ce_osal__top -> ti_sdo_ce_osal_Global[style=invis];
+        ti_sdo_ce_osal_Global -> ti_sdo_ce_osal__bot[style=invis];
+    }
+    subgraph cluster25 {
+        label="";
+        ti_sdo_ce_ipc__top [shape=box,label="ti.sdo.ce.ipc\n2,0,1,1220951085787", color=white];
+        ti_sdo_ce_ipc__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_ipc_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce_ipc__top -> ti_sdo_ce_ipc_Settings[style=invis];
+        ti_sdo_ce_ipc_Settings -> ti_sdo_ce_ipc__bot[style=invis];
+    }
+    subgraph cluster26 {
+        label="";
+        ti_sdo_ce_alg__top [shape=box,label="ti.sdo.ce.alg\n1,0,1,1220950781938", color=white];
+        ti_sdo_ce_alg__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_alg_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce_alg__top -> ti_sdo_ce_alg_Settings[style=invis];
+        ti_sdo_ce_alg_Settings -> ti_sdo_ce_alg__bot[style=invis];
+    }
+    subgraph cluster27 {
+        label="";
+        ti_sdo_ce_osal_linux__top [shape=box,label="ti.sdo.ce.osal.linux\n2,0,1,1220951140072", color=white];
+        ti_sdo_ce_osal_linux__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_osal_linux_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce_osal_linux__top -> ti_sdo_ce_osal_linux_Settings[style=invis];
+        ti_sdo_ce_osal_linux_Settings -> ti_sdo_ce_osal_linux__bot[style=invis];
+    }
+    subgraph cluster28 {
+        label="";
+        ti_sdo_ce_ipc_dsplink__top [shape=box,label="ti.sdo.ce.ipc.dsplink\n2,0,1,1220951096818", color=white];
+        ti_sdo_ce_ipc_dsplink__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_ipc_dsplink_Ipc [style=filled,fillcolor=lightgray, label="Ipc"];
+        ti_sdo_ce_ipc_dsplink__top -> ti_sdo_ce_ipc_dsplink_Ipc[style=invis];
+        ti_sdo_ce_ipc_dsplink_Ipc -> ti_sdo_ce_ipc_dsplink__bot[style=invis];
+        ti_sdo_ce_ipc_dsplink_DspLinkCfg [style=filled,fillcolor=lightgray, label="DspLinkCfg"];
+        ti_sdo_ce_ipc_dsplink__top -> ti_sdo_ce_ipc_dsplink_DspLinkCfg[style=invis];
+        ti_sdo_ce_ipc_dsplink_DspLinkCfg -> ti_sdo_ce_ipc_dsplink__bot[style=invis];
+    }
+    subgraph cluster29 {
+        label="";
+        ti_sdo_ce__top [shape=box,label="ti.sdo.ce\n1,0,6,1220950771473", color=white];
+        ti_sdo_ce__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_Engine [style=filled,fillcolor=lightgray, label="Engine"];
+        ti_sdo_ce__top -> ti_sdo_ce_Engine[style=invis];
+        ti_sdo_ce_Engine -> ti_sdo_ce__bot[style=invis];
+        ti_sdo_ce_CERuntime [style=filled,fillcolor=lightgray, label="CERuntime"];
+        ti_sdo_ce__top -> ti_sdo_ce_CERuntime[style=invis];
+        ti_sdo_ce_CERuntime -> ti_sdo_ce__bot[style=invis];
+        ti_sdo_ce_Settings [style=filled,fillcolor=lightgray, label="Settings"];
+        ti_sdo_ce__top -> ti_sdo_ce_Settings[style=invis];
+        ti_sdo_ce_Settings -> ti_sdo_ce__bot[style=invis];
+    }
+    subgraph cluster30 {
+        label="";
+        ti_sdo_ce_video__top [shape=box,label="ti.sdo.ce.video\n1,0,3,1220951334122", color=white];
+        ti_sdo_ce_video__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_video_VIDENCConfig [style=filled,fillcolor=lightgray, label="VIDENCConfig"];
+        ti_sdo_ce_video__top -> ti_sdo_ce_video_VIDENCConfig[style=invis];
+        ti_sdo_ce_video_VIDENCConfig -> ti_sdo_ce_video__bot[style=invis];
+        ti_sdo_ce_video_VIDDECConfig [style=filled,fillcolor=lightgray, label="VIDDECConfig"];
+        ti_sdo_ce_video__top -> ti_sdo_ce_video_VIDDECConfig[style=invis];
+        ti_sdo_ce_video_VIDDECConfig -> ti_sdo_ce_video__bot[style=invis];
+    }
+    subgraph cluster31 {
+        label="";
+        ti_sdo_ce_examples_codecs_viddec_copy__top [shape=box,label="ti.sdo.ce.examples.codecs.viddec_copy\n", color=white];
+        ti_sdo_ce_examples_codecs_viddec_copy__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_examples_codecs_viddec_copy_VIDDEC_COPY [style=filled,fillcolor=lightgray, label="VIDDEC_COPY"];
+        ti_sdo_ce_examples_codecs_viddec_copy__top -> ti_sdo_ce_examples_codecs_viddec_copy_VIDDEC_COPY[style=invis];
+        ti_sdo_ce_examples_codecs_viddec_copy_VIDDEC_COPY -> ti_sdo_ce_examples_codecs_viddec_copy__bot[style=invis];
+    }
+    subgraph cluster32 {
+        label="";
+        ti_sdo_ce_examples_codecs_videnc_copy__top [shape=box,label="ti.sdo.ce.examples.codecs.videnc_copy\n", color=white];
+        ti_sdo_ce_examples_codecs_videnc_copy__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_examples_codecs_videnc_copy_VIDENC_COPY [style=filled,fillcolor=lightgray, label="VIDENC_COPY"];
+        ti_sdo_ce_examples_codecs_videnc_copy__top -> ti_sdo_ce_examples_codecs_videnc_copy_VIDENC_COPY[style=invis];
+        ti_sdo_ce_examples_codecs_videnc_copy_VIDENC_COPY -> ti_sdo_ce_examples_codecs_videnc_copy__bot[style=invis];
+    }
+    subgraph cluster33 {
+        label="";
+        ti_sdo_ce_bioslog__top [shape=box,label="ti.sdo.ce.bioslog\n1,0,1,1220950800329", color=white];
+        ti_sdo_ce_bioslog__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_bioslog_LogClient [style=filled,fillcolor=lightgray, label="LogClient"];
+        ti_sdo_ce_bioslog__top -> ti_sdo_ce_bioslog_LogClient[style=invis];
+        ti_sdo_ce_bioslog_LogClient -> ti_sdo_ce_bioslog__bot[style=invis];
+    }
+    subgraph cluster34 {
+        label="";
+        ti_sdo_ce_utils_trace__top [shape=box,label="ti.sdo.ce.utils.trace\n1,0,1,1220951317087", color=white];
+        ti_sdo_ce_utils_trace__bot [shape=point,label="", style=invis];
+        ti_sdo_ce_utils_trace_TraceUtil [style=filled,fillcolor=lightgray, label="TraceUtil"];
+        ti_sdo_ce_utils_trace__top -> ti_sdo_ce_utils_trace_TraceUtil[style=invis];
+        ti_sdo_ce_utils_trace_TraceUtil -> ti_sdo_ce_utils_trace__bot[style=invis];
+    }
+    subgraph cluster35 {
+        label="";
+        ceapp__top [shape=box,label="ceapp\n", color=white];
+    }
+  }
+  node [font=Helvetica, fontsize=10];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    gnu_targets_rts470MV__top -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster10];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_utils_trace__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster13];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_utils_xdm__top -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster14];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_fc_dman3__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster15];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_fc_acpy3__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster16];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_alg__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster26];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_osal_linux__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster27];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_ipc_dsplink__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster28];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster29];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_video__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster30];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_examples_codecs_viddec_copy__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster31];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_examples_codecs_videnc_copy__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster32];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_bioslog__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster33];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ti_sdo_ce_utils_trace__bot -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster34];
+    gnu_targets_MVArm9__1_0_3__4_3 [shape=record,label="gnu.targets.MVArm9|1,0,3.4,3",style=filled, fillcolor=lightgrey];
+    ceapp__top -> gnu_targets_MVArm9__1_0_3__4_3 [ltail=cluster35];
+}

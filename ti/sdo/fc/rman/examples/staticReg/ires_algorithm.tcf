@@ -1,0 +1,37 @@
+/*
+ *  Copyright 2008 by Texas Instruments Incorporated.
+ *
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ */
+
+/*
+ *  ======== ires_algorithm.tcf ========
+ */
+
+utils.importFile("../common.tci");
+
+
+// check any and all asserts added in the script above
+//assert.check();
+
+// Disable the BIOS clock
+bios.PRD.USECLK = false;
+bios.CLK.ENABLECLK = false;
+/*ECM configuration*/
+bios.ECM.ENABLE = 1;
+bios.HWI.instance("HWI_INT4").interruptSelectNumber = 0;
+bios.HWI.instance("HWI_INT5").interruptSelectNumber = 1;
+bios.HWI.instance("HWI_INT6").interruptSelectNumber = 2;
+bios.HWI.instance("HWI_INT8").interruptSelectNumber = 3;
+bios.HWI.instance("HWI_INT9").interruptSelectNumber = 4;
+bios.HWI.instance("HWI_INT10").interruptSelectNumber = 5;
+
+/* generate the configuration files */
+prog.gen();
+/*
+ *  @(#) ti.sdo.fc.rman.examples.staticReg; 1, 0, 0,22; 9-9-2008 23:55:29; /db/atree/library/trees/fc-e20x/src/
+ */
+

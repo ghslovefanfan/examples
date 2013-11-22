@@ -1,0 +1,10 @@
+package.xdc
+package.xs
+package/video_copy.ccs
+package/.vers_g102
+package/.vers_r103
+package/.vers_b101
+package/video_copy.sch
+package/package_video_copy.c
+package/package.defs.h
+package/package.xdc.xml

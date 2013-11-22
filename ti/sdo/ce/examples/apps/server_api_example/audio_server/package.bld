@@ -1,0 +1,50 @@
+/* 
+ *  Copyright 2008
+ *  Texas Instruments Incorporated
+ *
+ *  All rights reserved.  Property of Texas Instruments Incorporated
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ * 
+ */
+/*
+ *  ======== package.bld ========
+ */
+
+var serverName = "audio_copy";
+
+//Pkg.attrs.profile = "debug";
+
+/* when constructing a release, release everything */
+Pkg.attrs.exportAll = true;
+Pkg.attrs.exportExe = true;
+
+Pkg.uses = ["ti/bios/include"];
+
+for (var i = 0; i < Build.targets.length; i++) {
+    var targ = Build.targets[i];
+
+    /* only build for DSP targets */
+    if (targ.os == "Linux") {
+        /* Linux doesn't host remote codecs (yet) */
+        continue;
+    }
+    else {
+        /* presume we're building a full server executable */
+        print("building for target " + targ.name + " ...");
+
+        Pkg.addExecutable(serverName, targ, targ.platform,
+            {
+                cfgScript: serverName + ".tcf",
+                lopts: "-l link.cmd",
+            }).
+            addObjects( [
+                "main.c",
+            ] );
+    }
+}
+
+/*
+ *  @(#) ti.sdo.ce.examples.apps.server_api_example.audio_server; 1,0,0,107; 9-9-2008 02:01:05; /db/atree/library/trees/ce-h27x/src/
+ */
+

@@ -1,0 +1,93 @@
+/*
+ *  ======== user.bld ========
+ *
+ * User note: YOU MUST MODIFY THIS FILE TO SPECIFY THE COMPILER TOOL PATHS.
+ */
+
+// This table list the targets for which to build libraries and programs, and for
+// each target it lists where the compiler tools are and for what platforms
+// the programs should be built. For all build variants where you specify
+// that "doBuild" is "true", you must specify the compiler tools, and it is
+// desirable to comment out unwanted platforms.
+// Example: if you are only interested in building Arm-side examples for
+// evmDM6446 running Montavista Arm Linux, set doBuild: false everywhere
+// except for the first Arm "doBuild"; then, specify your Montavista Arm
+// tools directory, and comment out all platforms for that build except
+// for '{ platform: "evmDM6446" }'.
+
+var buildTable = {
+    "Arm":    [{doBuild: true, // standard build for Montavista Linux
+                target:  "gnu.targets.MVArm9",
+
+                // MVArm tools. NOTE: make sure the directory you specify has a "bin" subdirectory
+                cgtoolsRootDir: "/opt/mv_pro_4.0.1/montavista/pro/devkit/arm/v5t_le",
+
+                platforms: [ // NOTE: comment out platforms (boards) below for which you don't want to build
+                    { description: "DaVinci evmDM6446 board, ARM-side", platform: "evmDM6446", dualCpu: false },
+                    { description: "DaVinci evmDM6467 board, ARM-side", platform: "evmDM6467", dualCpu: true },
+                    { description: "DaVinci evmDM355  board, ARM only", platform: "evmDM6446", dualCpu: false, outDir: "evmDM355" },
+                ],
+              },
+
+              { doBuild: false, // build for uC Linux
+                target:  "gnu.targets.UCArm9",
+
+                // UCLibc tools. NOTE: make sure the directory you specify has a "bin" subdirectory
+                cgtoolsRootDir: "/db/toolsrc/library/vendors2005/opensource/buildroot/16012006/staging_dir",
+
+                platforms: [
+                    { description: "DaVinci evmDM6446 board, ARM-side", platform: "evmDM6446", dualCpu: true },
+                    { description: "DaVinci evmDM6467 board, ARM-side", platform: "evmDM6467", dualCpu: true },
+                    { description: "DaVinci evmDM355  board, ARM only", platform: "evmDM6446", dualCpu: false, outDir: "evmDM355" },
+                ],
+              }],
+
+    "DSP":    [{doBuild: true, // DSP builds (DSP servers for dual-CPU platforms or full apps for DSP-only platforms)
+                target:  "ti.targets.C64P",
+
+                // specify the "root directory" for the compiler tools. NOTE: make sure the directory you specify has a "bin" subdirectory
+                cgtoolsRootDir: "/opt/dvsdk_1_40_02_33/cg6x_6_0_16",
+
+                platforms: [ // NOTE: comment out platforms (boards) below for which you don't want to build
+                    { description: "DaVinci evmDM6446 board, DSP-side Server", platform: "evmDM6446" },
+                    { description: "DaVinci evmDM6467 board, DSP-side Server", platform: "evmDM6467" },
+                    { description: "DaVinci evmDM6437 board, DSP only", platform: "evmDM6437" },
+                 // { description: "DaVinci evmDM648  board, DSP only", platform: "evmDM648"  },
+                ],
+              }],
+
+    "PC":     [{doBuild: false,  // build for PC Linux
+                target:  "gnu.targets.Linux86",
+                cgtoolsRootDir: "/db/toolsrc/library/vendors2005/opensource/gcc/4.1.0/Linux/gcc-4.1.0-glibc-2.3.6/i686-unknown-linux-gnu",
+                platforms: [ { platform: null, outDir: "PC" } ],
+              }],
+};
+
+
+// expert users: you can specify any compiler toolchain-specific options
+// here, for example,
+// C64P.ccOpts.prefix = "-pdr"; // enable remarks for the TI C64P compiler
+// UCArm9.lnkOpts.suffix = "-static"; // static linking
+// etc.
+
+//
+// no need to edit anything below this line
+// -----------------------------------------------------------------------------
+
+var targets = [];
+var userbldBuildPlatforms = {};
+
+for (var c in buildTable) {
+    var cpu = buildTable[ c ];
+    for (var t = 0; t < cpu.length; t++) {
+        if (cpu[t].doBuild) {
+            var targ = xdc.useModule( cpu[t].target );
+            targets[ targets.length ] = targ;
+            targ.rootDir = cpu[t].cgtoolsRootDir;
+            var targName = cpu[t].target.replace( /.*\./g, "" );
+            userbldBuildPlatforms[ targName ] = cpu[t].platforms;
+        }
+    }
+}
+
+Build.targets = targets;

@@ -1,0 +1,11 @@
+algoParams = {
+  vendor: "TI",
+  headers: [
+    ".\\imgenc1_copy_ti.h",
+  ],
+  interfaceName: "IIMGENC1COPY",
+  baseDir: ".",
+  moduleName: "IMGENC1COPY",
+  architecture: "C64P",
+  library: "lib\\imgenc1_copy.a64P",
+}

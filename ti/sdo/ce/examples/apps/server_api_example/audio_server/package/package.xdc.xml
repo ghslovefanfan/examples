@@ -1,0 +1,6 @@
+<?xml version='1.0'?>
+<package name='ti.sdo.ce.examples.apps.server_api_example.audio_server' release='' xmlns='xdc/services/spec'>
+    <autodoc tag='summary'>
+        <comment line='-1' text='++Codec+Engine+Server+for+Server+API+example.'/>
+    </autodoc>
+</package>
