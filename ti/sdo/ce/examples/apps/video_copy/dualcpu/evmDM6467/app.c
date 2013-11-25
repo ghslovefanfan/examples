@@ -44,9 +44,9 @@
  */
  
 #define IMAGESIZE    		(720 * 576)
-#define INFRAMESIZE   		(IMAGESIZE * 2 * sizeof(Int8))   /* raw frame (input) */
-#define ENCODEDFRAMESIZE	(IMAGESIZE * 2 * sizeof(Int8))  /* encoded frame */
-#define OUTFRAMESIZE		(IMAGESIZE * 2 * sizeof(Int8))   /* encoded frame */
+#define INFRAMESIZE   		(IMAGESIZE * 2 * sizeof(char))   /* raw frame (input) */
+#define ENCODEDFRAMESIZE	(IMAGESIZE * 2 * sizeof(char))  /* encoded frame */
+#define OUTFRAMESIZE		(IMAGESIZE * 2 * sizeof(char))   /* encoded frame */
 
 #if 0
 #define INFRAMESIZE       (1024 * sizeof(char))  /* raw frame (input) */
