@@ -26,8 +26,16 @@
 #include <ti/xdais/idma3.h>
 #endif
 
+/* Add for alg of image process by pitou */
+#include "cv.h"
+extern Void VIDENCCOPY_TI_RGB_2_YUV422( XDAS_UInt8* pRGB, XDAS_UInt8* pYUV, XDAS_Int32 height, XDAS_Int32 width);
+extern Void VIDENCCOPY_TI_YUV422_2_RGB( XDAS_UInt8* pYUV, XDAS_UInt8* pRGB, XDAS_Int32 height, XDAS_Int32 width);
+
 typedef struct VIDENCCOPY_TI_Obj {
     IALG_Obj    alg;            /* MUST be first field of all XDAS algs */
+	/* Add for alg of image process by pitou */
+	IplImage     *img;
+	XDAS_UInt8   *pRGB;
 #ifdef USE_ACPY3
     IDMA3_Handle dmaHandle1D1D8B;  /* DMA logical channel for 1D to 1D xfers */
 #endif
@@ -51,7 +59,7 @@ extern XDAS_Int32 VIDENCCOPY_TI_process(IVIDENC_Handle h, XDM_BufDesc *inBufs,
 
 extern XDAS_Int32 VIDENCCOPY_TI_control(IVIDENC_Handle handle,
     IVIDENC_Cmd id, IVIDENC_DynamicParams *params, IVIDENC_Status *status);
-
+	
 #endif
 
 /*

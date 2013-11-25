@@ -23,6 +23,17 @@
 #include "videnc_copy_ti.h"
 #include "videnc_copy_ti_priv.h"
 
+
+/* Add for alg of image process by pitou */
+#define MR(Y,U,V) (1.164 * (Y - 16) + 1.596 * (V - 128))
+#define MG(Y,U,V) (1.164 * (Y - 16) - 0.813 * (V - 128) - 0.391 * (U - 128))
+#define MB(Y,U,V) (1.164 * (Y - 16) + 2.018 * (U  - 128))
+
+
+#define MY(R, G, B) ( 0.257 * R + 0.504 * G + 0.098 * B + 16 )
+#define MU(R, G, B) (-0.148 * R - 0.291 * G + 0.439 * B + 128)
+#define MV(R, G, B) ( 0.439 * R - 0.368 * G - 0.071 * B + 128)
+
 /* buffer definitions */
 #define MININBUFS       1
 #define MINOUTBUFS      1
@@ -217,8 +228,19 @@ Int VIDENCCOPY_TI_alloc(const IALG_Params *algParams,
     memTab[0].alignment = 0;
     memTab[0].space = IALG_EXTERNAL;
     memTab[0].attrs = IALG_PERSIST;
-
-    return (1);
+	
+	/* Add for alg of image process by pitou */
+    memTab[1].size = sizeof(IplImage);
+    memTab[1].alignment = 0;
+    memTab[1].space = IALG_EXTERNAL;
+    memTab[1].attrs = IALG_PERSIST;
+	
+    memTab[2].size = 720 * 576 *3 * sizeof(XDAS_UInt8);
+    memTab[2].alignment = 0;
+    memTab[2].space = IALG_EXTERNAL;
+    memTab[2].attrs = IALG_SCRATCH;	
+	/* Add for alg of image process by pitou */
+    return (3);
 }
 
 
@@ -229,9 +251,18 @@ Int VIDENCCOPY_TI_free(IALG_Handle handle, IALG_MemRec memTab[])
 {
     GT_2trace(curTrace, GT_ENTER, "VIDENCCOPY_TI_free(0x%lx, 0x%lx)\n",
         handle, memTab);
-
+	/* Add for alg of image process by pitou */
+	VIDENCCOPY_TI_Obj *videncObj = (VIDENCCOPY_TI_Obj *)handle;
+	
     VIDENCCOPY_TI_alloc(NULL, NULL, memTab);
-    return (1);
+	/* Add for alg of image process by pitou */
+	memTab[0].base = handle;
+	memTab[1].base = videncObj->img;
+	memTab[1].size = sizeof(IplImage);
+	memTab[2].base = videncObj->pRGB;
+	memTab[2].size = 720 * 576 * 3 * sizeof(XDAS_UInt8);	
+	/* Add for alg of image process by pitou */
+    return (3);
 }
 
 
@@ -245,7 +276,12 @@ Int VIDENCCOPY_TI_initObj(IALG_Handle handle,
     GT_4trace(curTrace, GT_ENTER,
         "VIDENCCOPY_TI_initObj(0x%x, 0x%x, 0x%x, 0x%x)\n", handle, memTab,
         p, algParams);
-
+	
+	/* Add for alg of image process by pitou */
+	VIDENCCOPY_TI_Obj *videncObj = (VIDENCCOPY_TI_Obj *)handle;
+	videncObj->img = memTab[1];
+	videncObj->pRGB = memTab[1];
+	
     return (IALG_EOK);
 }
 
@@ -302,7 +338,8 @@ XDAS_Int32 VIDENCCOPY_TI_process(IVIDENC_Handle h, XDM_BufDesc *inBufs,
      */
 
     for (curBuf = 0; (curBuf < inBufs->numBufs) &&
-        (curBuf < outBufs->numBufs); curBuf++) {
+        (curBuf < outBufs->numBufs); curBuf++) 
+	{
 
         /* there's an available in and out buffer, how many samples? */
         minSamples = inBufs->bufSizes[curBuf] < outBufs->bufSizes[curBuf] ?
@@ -353,7 +390,34 @@ XDAS_Int32 VIDENCCOPY_TI_process(IVIDENC_Handle h, XDM_BufDesc *inBufs,
                outBufs->bufs[curBuf], inBufs->bufs[curBuf], minSamples);
 
         /* process the data: read input, produce output */
-        memcpy(outBufs->bufs[curBuf], inBufs->bufs[curBuf], minSamples);
+        //memcpy(outBufs->bufs[curBuf], inBufs->bufs[curBuf], minSamples);
+		/* Add for alg of image process by pitou */
+		
+		VIDENCCOPY_TI_Obj *VIDENC_COPY = (VIDENCCOPY_TI_Obj *)h;
+		
+		CvSize size; // pal frame, 422, YUV422 semi-planar
+		CvPoint point1, point2; // draw a rectangle in the middle of an image
+		CvScalar color = CV_RGB(0, 255, 0); // green
+		size.height = 576;
+		size.width = 720;
+
+		point1.x = size.width / 2 - 50;
+		point1.y = size.height / 2 - 50;
+		point2.x = size.width / 2 + 50;
+		point2.y = size.height / 2 + 50;
+		
+		VIDENCCOPY_TI_YUV422_2_RGB((XDAS_UInt8 *)inBufs->bufs[curBuf], 
+									VIDENC_COPY->pRGB, 
+									size.height, 
+									size.width);
+		//pRGB-->img-->add rectangel to img-->convert-->outBufs->bufs[curBuf]
+		VIDENCCOPY_TI_cvSetData(VIDENC_COPY->img, VIDENC_COPY->pRGB, size.width * 3);
+		VIDENCCOPY_TI_cvRectangle(VIDENC_COPY->img, point1, point2, color, CV_AA, 8, 0);
+		
+		VIDENCCOPY_TI_RGB_2_YUV422((XDAS_UInt8 *)((VIDENC_COPY->img)->imageData), 
+									(XDAS_UInt8 *)outBufs->bufs[curBuf], 
+									size.height, 
+									size.width);
 #endif
 
         outArgs->bytesGenerated += minSamples;
@@ -423,6 +487,119 @@ XDAS_Int32 VIDENCCOPY_TI_control(IVIDENC_Handle handle, IVIDENC_Cmd id,
 
     return (retVal);
 }
+
+Void VIDENCCOPY_TI_YUV422_2_RGB( XDAS_UInt8* pYUV, XDAS_UInt8* pRGB, XDAS_Int32 height, XDAS_Int32 width)
+{
+
+    XDAS_UInt8* pBGR = NULL;
+
+    XDAS_UInt8 R = 0;
+    XDAS_UInt8 G = 0;
+    XDAS_UInt8 B = 0;
+
+    XDAS_UInt8 Y = 0;
+    XDAS_UInt8 U = 0;
+    XDAS_UInt8 V = 0;
+
+    double tmp = 0;
+	int i,j;
+    for ( i = 0; i < height; ++i )
+    {
+        for ( j = 0; j < width; ++j )
+        {
+            pBGR = pRGB + i * width * 3 + j * 3;
+            Y = *(pYUV + i * width + j);
+            if(j % 2 ==0){
+
+                U = *(pYUV + height * width + i * width + j);
+                V = *(pYUV + height * width + i * width + j + 1);
+            }
+
+            else {
+
+                U = *(pYUV + height * width + i * width + j - 1);
+                V = *(pYUV + height * width + i * width + j);
+            }
+
+            tmp = MB(Y, U, V);
+            tmp = (tmp > 255) ? 255 : tmp;
+            tmp = (tmp < 0) ? 0 : tmp;
+
+            B = (XDAS_UInt8)tmp;
+
+            tmp = MG(Y, U, V);
+            tmp = (tmp > 255) ? 255 : tmp;
+            tmp = (tmp < 0) ? 0 : tmp;
+
+            G = (XDAS_UInt8)tmp;
+
+            tmp = MR(Y, U, V);
+            tmp = (tmp > 255) ? 255 : tmp;
+            tmp = (tmp < 0) ? 0 : tmp;
+
+            R = (XDAS_UInt8)tmp;
+
+            *pBGR       = B;           
+            *(pBGR + 1) = G;       
+            *(pBGR + 2) = R;
+        }
+    }
+}
+
+
+Void VIDENCCOPY_TI_RGB_2_YUV422( XDAS_UInt8* pRGB, XDAS_UInt8* pYUV, XDAS_Int32 height, XDAS_Int32 width)
+{
+    XDAS_UInt8* pBGR = NULL;
+
+    XDAS_UInt8 R = 0;
+    XDAS_UInt8 G = 0;
+    XDAS_UInt8 B = 0;
+
+    XDAS_UInt8 Y = 0;
+    XDAS_UInt8 U = 0;
+    XDAS_UInt8 V = 0;
+	
+    double tmp = 0;
+	int i,j;
+
+    for ( i = 0; i < height; ++i )
+    {
+        for ( j = 0; j < width; ++j )
+        {
+            pBGR = pRGB + i * width * 3 + j * 3;
+
+            B = *pBGR;
+            G = *(pBGR + 1);
+            R = *(pBGR + 2);
+
+            tmp = MY(R, G, B);
+            tmp = (tmp > 255) ? 255 : tmp;
+            tmp = (tmp < 0) ? 0 : tmp;
+
+            Y = (XDAS_UInt8)tmp;
+
+            *(pYUV + i * width + j) = Y;
+
+            if(j % 2 == 0) {
+                tmp = MU(R, G, B);
+                tmp = (tmp > 255) ? 255 : tmp;
+                tmp = (tmp < 0) ? 0 : tmp;
+                U = (XDAS_UInt8)tmp;
+                *(pYUV + height * width + i * width + j) = U;
+            }
+            else {
+
+                tmp = MV(R, G, B);
+                tmp = (tmp > 255) ? 255 : tmp;
+                tmp = (tmp < 0) ? 0 : tmp;
+                V = (XDAS_UInt8)tmp;
+                *(pYUV + height * width + i * width + j) = V;
+            }
+        }
+    }
+}
+
+
 /*
  *  @(#) ti.sdo.ce.examples.codecs.videnc_copy; 1,0,0,132; 9-9-2008 02:03:52; /db/atree/library/trees/ce-h27x/src/
  */
