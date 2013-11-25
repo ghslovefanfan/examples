@@ -42,9 +42,17 @@
  *  verbatim (there is no buffer copying involved). CodecEngine
  *  (and the ceapp module) provides and API for allocating such buffers.
  */
+ 
+#define IMAGESIZE    		(720 * 576)
+#define INFRAMESIZE   		(IMAGESIZE * 2 * sizeof(Int8))   /* raw frame (input) */
+#define ENCODEDFRAMESIZE	(IMAGESIZE * 2 * sizeof(Int8))  /* encoded frame */
+#define OUTFRAMESIZE		(IMAGESIZE * 2 * sizeof(Int8))   /* encoded frame */
+
+#if 0
 #define INFRAMESIZE       (1024 * sizeof(char))  /* raw frame (input) */
 #define ENCODEDFRAMESIZE  (1024 * sizeof(char))  /* encoded frame */
 #define OUTFRAMESIZE      (1024 * sizeof(char))  /* decoded frame (output) */
+#endif
 
 /* prototypes of functions defined in ceapp.c: */
 extern int   ceapp_init();            /* initialize the ceapp module */
@@ -205,8 +213,8 @@ int main(int argc, char *argv[])
     char *inFileName, *outFileName;
 
     if (argc <= 1) {
-        inFileName  = "in.dat";
-        outFileName = "out.dat";
+        inFileName  = "in.yuv";
+        outFileName = "out.yuv";
     }
     else if (argc != 3 && argc != 4) {
         printf("Usage: %s input-file output-file\n", argv[0]);
