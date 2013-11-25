@@ -17,8 +17,11 @@ EXAMPLES_ROOTDIR := $(CURDIR)/../../../../../..
 
 include $(EXAMPLES_ROOTDIR)/xdcpaths.mak
 
+#EMCV PATH
+EMCV_PATH=$(CURDIR)/../../emcv/cv;$(CURDIR)/../../emcv/cxcore
+
 # [CE] add the examples directory itself to the list of paths to packages
-XDC_PATH := $(EXAMPLES_ROOTDIR);$(XDC_PATH)
+XDC_PATH := $(EXAMPLES_ROOTDIR);$(XDC_PATH);$(EMCV_PATH)
 
 include $(EXAMPLES_ROOTDIR)/buildutils/xdcrules.mak
 #

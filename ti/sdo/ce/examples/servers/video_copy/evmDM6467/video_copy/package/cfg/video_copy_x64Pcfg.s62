@@ -5,7 +5,7 @@
 ;; INPUT video_copy_x64P.cdb
 
 ;; CONFIGURATION/VERSION INFORMATION
-	.asg "Fri Nov 22 13:12:52 2013", VERS$DATE
+	.asg "Mon Nov 25 16:50:45 2013", VERS$DATE
 
 ;; PROLOGUE
 	.include video_copy_x64Pcfg.h62

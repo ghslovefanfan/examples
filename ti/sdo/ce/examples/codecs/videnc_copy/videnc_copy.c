@@ -249,11 +249,12 @@ Int VIDENCCOPY_TI_alloc(const IALG_Params *algParams,
  */
 Int VIDENCCOPY_TI_free(IALG_Handle handle, IALG_MemRec memTab[])
 {
-    GT_2trace(curTrace, GT_ENTER, "VIDENCCOPY_TI_free(0x%lx, 0x%lx)\n",
-        handle, memTab);
 	/* Add for alg of image process by pitou */
 	VIDENCCOPY_TI_Obj *videncObj = (VIDENCCOPY_TI_Obj *)handle;
-	
+		
+    GT_2trace(curTrace, GT_ENTER, "VIDENCCOPY_TI_free(0x%lx, 0x%lx)\n",
+        handle, memTab);
+        	
     VIDENCCOPY_TI_alloc(NULL, NULL, memTab);
 	/* Add for alg of image process by pitou */
 	memTab[0].base = handle;
@@ -273,14 +274,15 @@ Int VIDENCCOPY_TI_initObj(IALG_Handle handle,
     const IALG_MemRec memTab[], IALG_Handle p,
     const IALG_Params *algParams)
 {
+	
+	VIDENCCOPY_TI_Obj *videncObj = (VIDENCCOPY_TI_Obj *)handle;
     GT_4trace(curTrace, GT_ENTER,
         "VIDENCCOPY_TI_initObj(0x%x, 0x%x, 0x%x, 0x%x)\n", handle, memTab,
         p, algParams);
 	
 	/* Add for alg of image process by pitou */
-	VIDENCCOPY_TI_Obj *videncObj = (VIDENCCOPY_TI_Obj *)handle;
-	videncObj->img = memTab[1];
-	videncObj->pRGB = memTab[1];
+	videncObj->img = memTab[1].base;
+	videncObj->pRGB = memTab[2].base;
 	
     return (IALG_EOK);
 }
@@ -294,7 +296,12 @@ XDAS_Int32 VIDENCCOPY_TI_process(IVIDENC_Handle h, XDM_BufDesc *inBufs,
 {
     XDAS_Int32 curBuf;
     XDAS_UInt32 minSamples;
-
+	
+	VIDENCCOPY_TI_Obj *VIDENC_COPY = (VIDENCCOPY_TI_Obj *)h;
+	CvSize size; // pal frame, 422, YUV422 semi-planar
+	CvPoint point1, point2; // draw a rectangle in the middle of an image
+	CvScalar color;
+	
 #ifdef USE_ACPY3
     const Uint32 maxTransferChunkSize       = 0xffff;
     Uint32       thisTransferChunkSize      = 0x0;
@@ -393,11 +400,7 @@ XDAS_Int32 VIDENCCOPY_TI_process(IVIDENC_Handle h, XDM_BufDesc *inBufs,
         //memcpy(outBufs->bufs[curBuf], inBufs->bufs[curBuf], minSamples);
 		/* Add for alg of image process by pitou */
 		
-		VIDENCCOPY_TI_Obj *VIDENC_COPY = (VIDENCCOPY_TI_Obj *)h;
-		
-		CvSize size; // pal frame, 422, YUV422 semi-planar
-		CvPoint point1, point2; // draw a rectangle in the middle of an image
-		CvScalar color = CV_RGB(0, 255, 0); // green
+		color = CV_RGB(0, 255, 0); // green
 		size.height = 576;
 		size.width = 720;
 
@@ -488,7 +491,7 @@ XDAS_Int32 VIDENCCOPY_TI_control(IVIDENC_Handle handle, IVIDENC_Cmd id,
     return (retVal);
 }
 
-Void VIDENCCOPY_TI_YUV422_2_RGB( XDAS_UInt8* pYUV, XDAS_UInt8* pRGB, XDAS_Int32 height, XDAS_Int32 width)
+Void YUV422_2_RGB( XDAS_UInt8* pYUV, XDAS_UInt8* pRGB, XDAS_Int32 height, XDAS_Int32 width)
 {
 
     XDAS_UInt8* pBGR = NULL;
@@ -547,7 +550,7 @@ Void VIDENCCOPY_TI_YUV422_2_RGB( XDAS_UInt8* pYUV, XDAS_UInt8* pRGB, XDAS_Int32 
 }
 
 
-Void VIDENCCOPY_TI_RGB_2_YUV422( XDAS_UInt8* pRGB, XDAS_UInt8* pYUV, XDAS_Int32 height, XDAS_Int32 width)
+Void RGB_2_YUV422( XDAS_UInt8* pRGB, XDAS_UInt8* pYUV, XDAS_Int32 height, XDAS_Int32 width)
 {
     XDAS_UInt8* pBGR = NULL;
 

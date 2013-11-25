@@ -749,10 +749,10 @@ typedef CvStatus (CV_STDCALL *CvFunc2D_1A1P1I)(void* arr, int step, CvSize size,
 
 typedef CvStatus (CV_STDCALL *CvFunc2DnC_1A1P)( void* arr, int step, CvSize size,
                                                 int cn, int coi, void* param );
-
+/*
 typedef CvStatus (CV_STDCALL *CvFunc2DnC_1A1P)( void* arr, int step, CvSize size,
                                                 int cn, int coi, void* param );
-
+*/
 typedef CvStatus (CV_STDCALL *CvFunc2D_1A2P)( void* arr, int step, CvSize size,
                                               void* param1, void* param2 );
 
@@ -780,12 +780,12 @@ typedef CvStatus (CV_STDCALL *CvFunc2DnC_2A1P)( void* arr0, int step0,
                                                 void* arr1, int step1,
                                                 CvSize size, int cn,
                                                 int coi, void* param );
-
+/*
 typedef CvStatus (CV_STDCALL *CvFunc2DnC_2A1P)( void* arr0, int step0,
                                                 void* arr1, int step1,
                                                 CvSize size, int cn,
                                                 int coi, void* param );
-
+*/
 typedef CvStatus (CV_STDCALL *CvFunc2D_2A2P)( void* arr0, int step0,
                                               void* arr1, int step1, CvSize size,
                                               void* param1, void* param2 );

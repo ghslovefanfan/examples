@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--  This file conforms to the DTD xdc/bld/release.dtd -->
-<release name="ti_sdo_ce_examples_servers_video_copy_evmDM6467" label="default" date="1385097179173" buildCount="11">
+<release name="ti_sdo_ce_examples_servers_video_copy_evmDM6467" label="default" date="1385369468217" buildCount="12">
 <package name="ti.sdo.ce.examples.servers.video_copy.evmDM6467"
     version=""/>
 <imports>
