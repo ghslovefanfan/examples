@@ -98,9 +98,10 @@ cvFree_( void* ptr)
     // Pointer must be aligned by CV_MALLOC_ALIGN
 	if(ptr)
 	{
-	    if( ((size_t)ptr & (CV_MALLOC_ALIGN-1)) != 0 )
+	    /*if( ((size_t)ptr & (CV_MALLOC_ALIGN-1)) != 0 )
     	    return CV_BADARG_ERR;
-	    free( *((char**)ptr - 1) );
+	    */
+		free( *((char**)ptr - 1) );
 	}
 	
 }
