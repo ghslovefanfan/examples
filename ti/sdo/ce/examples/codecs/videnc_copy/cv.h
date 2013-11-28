@@ -43,7 +43,7 @@
 #ifndef _CV_H_
 #define _CV_H_
 
-#include "cxcore.h"
+#include "../cxcore/cxcore.h"
 #include "cvtypes.h"
 
 #ifdef __cplusplus
