@@ -49,8 +49,8 @@
     #pragma warning( disable: 4711 4710 4514 )
 #endif
 
-#include "./cv.h"
-#include "../cxcore/cxmisc.h"
+#include cv.h"
+#include "cxmisc.h"
 #include <math.h>
 #include <assert.h>
 #include <string.h>
